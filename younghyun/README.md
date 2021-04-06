@@ -39,3 +39,9 @@ https://leehwarang.github.io/2020/05/02/useMemo&useCallback.html
 > detail
 
 1:1 채팅 페이지, 설정 디테일 페이지
+
+## Enzyme vs react-testing-library
+
+> 리액트 테스트 도구들의 차이
+
+https://blog.logrocket.com/enzyme-vs-react-testing-library-a-mindset-shift/
