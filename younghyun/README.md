@@ -4,12 +4,9 @@
 
 ## 연습
 
-> 1. CRA 없이 구현하기
+> 1.  create react app
 
-1-1)  
-https://baeharam.netlify.app/posts/react/React-CRA-%EC%97%86%EC%9D%B4-%EB%A6%AC%EC%95%A1%ED%8A%B8-%ED%99%98%EA%B2%BD-%EB%A7%8C%EB%93%A4%EA%B8%B0
-
-1-2) 웹팩, 바벨 정확히 알기
+1-1) 웹팩, 바벨 정확히 알기
 
 > 2. TDD에 조금만 익숙해지기
 
