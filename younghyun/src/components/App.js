@@ -1,6 +1,6 @@
 import { useMediaQuery } from "react-responsive";
 import Aligner from "components/responsive/centerAligner";
-import GlobalStyle from "components/globalStyles";
+import GlobalStyle from "components/responsive/globalStyles";
 import MobileStyle from "components/responsive/mobileStyles";
 import Router from "components/router";
 
@@ -12,10 +12,12 @@ function App() {
     });
 
     return (
-        <Aligner maxWidth={MAX_WIDTH}>
+        <>
             {isMobile ? <MobileStyle /> : <GlobalStyle />}
-            <Router />
-        </Aligner>
+            <Aligner maxWidth={MAX_WIDTH}>
+                <Router />
+            </Aligner>
+        </>
     );
 }
 
