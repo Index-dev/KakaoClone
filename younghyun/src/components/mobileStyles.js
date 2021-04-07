@@ -1,10 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
+const MobileStyle = createGlobalStyle`
     body {
+        width: 100vw;
         background-color: #f2f2f2;
+        background-color: blue;
         color: #070707;
     }
 `;
 
-export default GlobalStyle;
+export default MobileStyle;
