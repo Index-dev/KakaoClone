@@ -1,5 +1,5 @@
 import Aligner from "components/responsive/centerAligner";
-import GlobalStyle from "components/responsive/globalStyles";
+import GlobalStyle from "components/globalStyles";
 import Router from "components/router";
 
 const MAX_WIDTH = "500px";
