@@ -6,6 +6,9 @@
 
 - [ ] layout
 - CRA? or not?
+- make folder structure
+- git commit message rules
+- make README.md clear
 
 # Func.
 
