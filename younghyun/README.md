@@ -31,7 +31,7 @@ https://leehwarang.github.io/2020/05/02/useMemo&useCallback.html
 
 > page
 
-친구, 채팅 리스트, 이슈 , 설정 페이지
+로그인 페이지, 친구, 채팅 리스트, 이슈 , 설정 페이지
 
 > detail
 
