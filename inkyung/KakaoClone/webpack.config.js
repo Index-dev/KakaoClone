@@ -40,6 +40,12 @@ module.exports = {
         options: {
           name: '[name].[ext]'
         }
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+            use: [{
+                loader: 'file-loader'
+            }]
       }
     ]
   },
