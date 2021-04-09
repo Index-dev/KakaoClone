@@ -1,4 +1,4 @@
-.content {
+.login__content {
   display: flex;
   width: 330px;
   height: 470px;
@@ -21,7 +21,7 @@
     border: 5px solid;
     border-radius: 100%;
 }
-.Frame > form > input {
+.login__content > form > input {
   border: none;
   margin: 3px;
   width: 75%;

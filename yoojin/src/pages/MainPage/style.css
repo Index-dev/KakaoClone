@@ -1,0 +1,12 @@
+.main__content {
+    display: flex;
+    width: 330px;
+    height: 470px;
+    text-align: center;
+    justify-content: center;
+    flex-flow: column;
+    background-color: #ffffff;
+  }
+  .main__content > .content{
+      height: 88%;
+  }

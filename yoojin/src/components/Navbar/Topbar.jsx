@@ -1,12 +1,16 @@
 import React from 'react'
-import './Topbar.css';
+import './TopBar.css';
 import wifi from './../../img/wifi.png'
-function Topbar() {
+import signal from './../../img/signal.png'
+import lowBattery from './../../img/low-battery-level.png'
+function TopBar() {
     return (
         <div className="Topbar">
             <img src={wifi}/>
+            <img src={signal}/>
+            <img src={lowBattery}/>
         </div>
     )
 }
 
-export default Topbar
+export default TopBar
