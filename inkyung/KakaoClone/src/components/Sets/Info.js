@@ -1,20 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import {FcSettings} from "react-icons/fc";
+import { Link } from 'react-router-dom';
 import Me from '../../components/Main/Me';
 
 class Info extends React.Component{
     render(){
         return(
             <Frame>
-                <Title>설정<Searchicon/></Title>
                 <Infos>
                     <Me></Me>
                     <InfoL>
                         <Item>알림</Item>
                         <Item>채팅방</Item>
                         <Item>친구</Item>
-                        <Item>로그아웃</Item>
+                        <Item>
+                        <Link to={"/"} style={{ textDecoration: "none" }}>로그아웃</Link>
+                        </Item>
                     </InfoL>
                 </Infos>
             </Frame>
@@ -25,20 +26,10 @@ class Info extends React.Component{
 const Frame = styled.div`
     grid-area: list;
     display: grid;
-    grid-template-rows: 10% auto;
+    grid-template-rows: auto;
     grid-template-areas:
-        "title"
         "infos"
     ;
-`
-
-const Title = styled.div`
-    grid-area: title;
-    padding-left: 10%;
-    font-size: xx-large;
-    display: flex; 
-    align-items: center; 
-    background-color: #f5f5f5;
 `
 
 const Infos = styled.div`
@@ -70,10 +61,6 @@ const Item = styled.div`
     }
 `
 
-export const Searchicon = styled(FcSettings)`
-    font-size: xx-large;
-    padding-left: 1%;
-`
 
 export default Info;
 
