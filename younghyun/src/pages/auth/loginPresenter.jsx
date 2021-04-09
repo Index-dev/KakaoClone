@@ -1,14 +1,32 @@
 import styled from "styled-components";
+import ruinedCity from "assets/image/ruinedCity.png";
 
-const LoginContainer = styled.div`
-    border: 1px solid black;
+const Container = styled.div`
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
 `;
+
+const BackgroundImage = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(${ruinedCity});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: sepia(50%) grayscale(80%);
+`;
+
+const LoginInfo = styled.div``;
 
 function LoginPresenter() {
     return (
-        <LoginContainer>
-            <div>hi</div>
-        </LoginContainer>
+        <Container>
+            <BackgroundImage />
+            <LoginInfo />
+        </Container>
     );
 }
 
