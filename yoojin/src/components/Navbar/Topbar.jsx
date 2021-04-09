@@ -1,9 +1,10 @@
 import React from 'react'
-
+import './Topbar.css';
+import wifi from './../../img/wifi.png'
 function Topbar() {
     return (
-        <div>
-            
+        <div className="Topbar">
+            <img src={wifi}/>
         </div>
     )
 }

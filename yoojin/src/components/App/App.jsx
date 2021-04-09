@@ -1,17 +1,18 @@
-import './App.css';
+import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Login from '../../pages/LoginPage';
+import Login from "../../pages/LoginPage";
 
-const App = ()=> {
+const App = () => {
   return (
     <div className="App">
-    <BrowserRouter>
-      <Switch>
-        <Route exact={true} path="/" component={Login}/>
-      </Switch>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Switch>
+          <Route exact={true} path="/" component={Login} />
+          <Route path="/chat" component={Login} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

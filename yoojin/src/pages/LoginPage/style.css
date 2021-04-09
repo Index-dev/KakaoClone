@@ -1,7 +1,7 @@
-.Frame {
+.content {
   display: flex;
   width: 330px;
-  height: 500px;
+  height: 470px;
   text-align: center;
   justify-content: center;
   flex-flow: column;
@@ -31,10 +31,10 @@
   padding-left: 10px;
 }
 
-.Frame > form > button {
+.login__button{
   margin: 10px;
   /* width: 50%; */
-  width: 70%;
+  width: 80%;
   height: 30%;
   border: none;
   background-color: #4d4d4d;
