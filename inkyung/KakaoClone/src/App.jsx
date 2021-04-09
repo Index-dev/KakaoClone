@@ -5,6 +5,8 @@ import './App.css';
 
 import MainPage from "./pages/Mainpage";
 import Login from "./pages/Loginpage";
+import Chat from "./pages/Chatpage";
+import Search from "./pages/Searchpage";
 import Setting from "./pages/Settingpage";
 
 const App = () => {
@@ -14,6 +16,8 @@ const App = () => {
       <Switch>
         <Route exact={true} path="/" component={Login}/>
         <Route path="/main" component={MainPage}/>
+        <Route path="/chatting" component={Chat}/>
+        <Route path="/search" component={Search}/>
         <Route path="/setting" component={Setting}/>
       </Switch>
     </BrowserRouter>
