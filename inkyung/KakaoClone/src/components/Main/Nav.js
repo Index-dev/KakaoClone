@@ -11,10 +11,10 @@ class Nav extends React.Component {
                     <Link to={"/main"} style={{ textDecoration: "none" }}><Hicon></Hicon></Link>
                 </Home>
                 <Talk>
-                    <Link to={"/"} style={{ textDecoration: "none" }}><Ticon></Ticon></Link>
+                    <Link to={"/chatting"} style={{ textDecoration: "none" }}><Ticon></Ticon></Link>
                 </Talk>
                 <Search>
-                    <Link to={"/"} style={{ textDecoration: "none" }}><Scicon></Scicon></Link>
+                    <Link to={"/search"} style={{ textDecoration: "none" }}><Scicon></Scicon></Link>
                 </Search>
                 <Setting>
                     <Link to={"/setting"} style={{ textDecoration: "none" }}><Sicon></Sicon></Link>
@@ -25,7 +25,7 @@ class Nav extends React.Component {
 }
 
 const Frame = styled.div`
-    background-color: #f2f2f2;
+    background-color: #ffe6e6;
     grid-area: nav;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -83,15 +83,27 @@ const Setting = styled.div`
 
 export const Hicon = styled(FcMusic)`
     font-size: xxx-large;
+    &:hover{
+        background-color: white;
+    }
 `
 export const Ticon = styled(FcAdvertising)`
     font-size: xxx-large;
+    &:hover{
+        background-color: white;
+    }
 `
 export const Sicon = styled(FcServices)`
     font-size: xxx-large;
+    &:hover{
+        background-color: white;
+    }
 `
 export const Scicon = styled(FcSearch)`
     font-size: xxx-large;
+    &:hover{
+        background-color: white;
+    }
 `
 
 export default Nav;
