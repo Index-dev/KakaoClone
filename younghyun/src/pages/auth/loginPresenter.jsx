@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ruinedCity from "assets/image/ruinedCity.png";
+import ruinedCity from "assets/image/ruinedCity.jpg";
 
 const Container = styled.div`
     width: 100%;
@@ -16,10 +16,13 @@ const BackgroundImage = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    filter: sepia(50%) grayscale(80%);
+    z-index: -1;
 `;
 
-const LoginInfo = styled.div``;
+const LoginInfo = styled.div`
+    width: 60%;
+    border: 1px solid white;
+`;
 
 function LoginPresenter() {
     return (
