@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
 import Topbar from "../../components/Main/Topbar"
-import logo from "../Loginpage/title.png";
+import logo from "../../Photos/logo.png";
 
 class Mainpage extends React.Component{
     render(){
@@ -10,12 +10,17 @@ class Mainpage extends React.Component{
             <Frame>
                 <Topbar></Topbar>
                 <Logo>
-                    <ImgF>
-                    </ImgF>
+                    <Img src={logo}/>
                 </Logo>
                 <IFrame>
-                    <IPFrame><ID placeholder="이름을 입력하세요."></ID></IPFrame>
-                    <IPFrame><PW placeholder="비밀번호를 입력하세요." type="password"></PW></IPFrame>
+                    <IPFrame>
+                        <div>ID</div>
+                        <ID placeholder="이름을 입력하세요."></ID>
+                    </IPFrame>
+                    <IPFrame>
+                        <div>PW</div>
+                        <PW placeholder="비밀번호를 입력하세요." type="password"></PW>
+                    </IPFrame>
                 </IFrame>
                 <BFrame>
                 <Link to={"/main"} style={{ textDecoration: "none" }}>로그인</Link>
@@ -46,15 +51,12 @@ const Logo = styled.div`
     text-align: center;
 `;
 
-const ImgF = styled.div`
-    width: 50%;
-`
-
 const Img = styled.img`
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 10em;
+    height: 10em;
     object-fit: cover;
 `;
 
