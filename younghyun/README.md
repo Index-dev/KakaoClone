@@ -2,6 +2,16 @@
 
 사용 스택: React
 
+### 프로젝트 컨셉
+
+```
+인기없는 캐릭터인 제이지가
+반란을 통해
+카카오톡을 장악한 컨셉
+```
+
+---
+
 ## 연습
 
 > 1.  create react app
@@ -31,7 +41,7 @@ https://leehwarang.github.io/2020/05/02/useMemo&useCallback.html
 
 > page
 
-친구, 채팅 리스트, 이슈 , 설정 페이지
+로그인 페이지, 친구, 채팅 리스트, 이슈 , 설정 페이지
 
 > detail
 
