@@ -17,16 +17,28 @@ class Mainpage extends React.Component{
         )
     }
 
+    descNum = () => {
+        this.setState({
+            count: this.count--
+        }, () => {
+                this.getNum();
+            }
+        )
+    }
+
     getNum = () => {
-        console.log(this.count)
         if(this.count === 4){
             window.location.replace("/main")
+        }
+        else if(this.count === 0){
+            window.location.reload()
         }
     }
 
     render(){
         const {
-            countNum
+            countNum,
+            descNum
         } = this;
         
         return(
@@ -39,37 +51,37 @@ class Mainpage extends React.Component{
                     <NButton onClick={countNum}>
                         <NumFrame>1</NumFrame>
                     </NButton>
-                    <NButton>
+                    <NButton onClick={countNum}>
                         <NumFrame>2</NumFrame>
                     </NButton>
-                    <NButton>
+                    <NButton onClick={countNum}>
                         <NumFrame>3</NumFrame>
                     </NButton>
-                    <NButton>
+                    <NButton onClick={countNum}>
                         <NumFrame>4</NumFrame>
                     </NButton>
-                    <NButton>
+                    <NButton onClick={countNum}>
                         <NumFrame>5</NumFrame>
                     </NButton>
-                    <NButton>
+                    <NButton onClick={countNum}>
                         <NumFrame>6</NumFrame>
                     </NButton>
-                    <NButton>
+                    <NButton onClick={countNum}>
                         <NumFrame>7</NumFrame>
                     </NButton>
-                    <NButton>
+                    <NButton onClick={countNum}>
                         <NumFrame>8</NumFrame>
                     </NButton>
-                    <NButton>
+                    <NButton onClick={countNum}>
                         <NumFrame>9</NumFrame>
                     </NButton>
                     <NButton>
                         <NumFrame>얼굴인식</NumFrame>
                     </NButton>
-                    <NButton>
+                    <NButton onClick={countNum}>
                         <NumFrame>0</NumFrame>
                     </NButton>
-                    <NButton>
+                    <NButton onClick={descNum}>
                         <NumFrame>지우기</NumFrame>
                     </NButton>
                 </PadFrame>
