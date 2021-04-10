@@ -11,47 +11,52 @@ class Friends extends React.Component {
     }
 
     toggleProfile() {
-        console.log(this.state.showProfile)
         this.setState({
             showProfile: !this.state.showProfile,
         });
       }
 
     render(){
+
         return(
             <div>
             <Frame>
                 <Fprofile>
                     <Fphoto>
+                        <PButton onClick={this.toggleProfile.bind(this)}>
                         <IMG src={F1}></IMG>
+                        </PButton>
                     </Fphoto>
-                    <Fname>친구1</Fname>
+                    <InfoF>
+                        <Fname>홍길동</Fname>
+                        <Message>부릉부릉</Message>
+                    </InfoF>
                     <MDiv>
-                        <Balloon>
-                            <Fmessage>메세지1~</Fmessage>
-                        </Balloon>
+                        <Music>작은 것들을 위한 시 - 방탄소년단 ▷</Music>
                    </MDiv>
                 </Fprofile>
                 <Fprofile>
                     <Fphoto>
                         <IMG src={F2}></IMG>
                     </Fphoto>
-                    <Fname>친구2</Fname>
+                    <InfoF>
+                        <Fname>김철수</Fname>
+                        <Message></Message>
+                    </InfoF>
                     <MDiv>
-                        <Balloon>
-                            <Fmessage>메세지2~</Fmessage>
-                        </Balloon>
+                        <Music>Celebrity - 아이유 ▷</Music>
                    </MDiv>
                 </Fprofile>
                 <Fprofile>
                     <Fphoto>
                         <IMG src={F3}></IMG>
                     </Fphoto>
-                    <Fname>친구3</Fname>
+                    <InfoF>
+                        <Fname>김영희</Fname>
+                        <Message>🧸</Message>
+                    </InfoF>
                    <MDiv>
-                        <Balloon>
-                            <Fmessage>메세지3~</Fmessage>
-                        </Balloon>
+                        <Music>Cry for Me - Camila Cabello ▷</Music>
                    </MDiv>
                 </Fprofile>
             </Frame>
@@ -66,15 +71,15 @@ class Friends extends React.Component {
 const Frame = styled.div`
     grid-area: friendlist;
     display: grid;
-    padding-top: 5%;
-    grid-template-rows: repeat(auto-fill, minmax(60px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
     overflow: auto;
+    padding-right: 3%;
 `
 
 const Fprofile = styled.div`
     height: 60px;
     display: grid; 
-    grid-template-columns: 18% 27% 50%;
+    grid-template-columns: 18% 20% auto;
     grid-template-areas: "img name msg";
     &:hover {
         cursor: pointer;
@@ -92,53 +97,51 @@ const IMG = styled.img`
     display: flex;
     justify-content: center;
     text-align: center;
-    width: 3em;
-    height: 3em;
+    width: 2.6em;
+    height: 2.2em;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 30%;
     border: 1px solid gray;
 `
 
-const Fname = styled.div`   
-    padding-left: 10%;
+const PButton = styled.div`
+
+`
+
+const InfoF = styled.div`
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+`
+
+const Fname = styled.div`  
     grid-area: name;
     display: flex; 
     align-items: center; 
+    font-weight: 550;
+`
+
+const Message = styled.div`
+    font-size: small;
+    font-weight: 250;
 `
 
 const MDiv = styled.div`
     grid-area: msg;
     display: flex; 
     align-items: center; 
-    justify-content: center;
+    justify-content: flex-end;
 `
-
-const Fmessage = styled.div`
-    display: flex; 
-    align-items: center; 
-    justify-content: center;  
-`
-
-const Balloon = styled.div`
-    position: relative;
-    width: 100%; 
-    height: 70%;
-    background: #ffe6e6; 
-    border-radius: 10px;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;  
-
-    &:after{
-        border-top: 10px solid #ffe6e6; 
-        border-left: 10px solid transparent; 
-        border-right: 10px solid transparent; 
-        border-bottom: 0px solid transparent; 
-        content:""; 
-        position:absolute;
-        bottom:-10px;
-        left: 30px;  
-    }
+const Music = styled.div`
+    font-size: small;
+    font-weight: 100;
+    border: 1px solid gray;
+    border-radius: 2em;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-color: #2ced1f;
 `
 
 export default Friends;
