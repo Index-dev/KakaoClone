@@ -26,10 +26,11 @@ const App = () => {
 
 const GlobalStyle = createGlobalStyle`
   body{
-    width: 100vw;
+    max-width: 500px;
     height: 100vh;
     margin: 0;
     padding: 0;
+
   }
 `;
 
