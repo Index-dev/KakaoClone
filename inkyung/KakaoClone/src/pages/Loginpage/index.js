@@ -1,30 +1,78 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from 'react-router-dom';
 import Topbar from "../../components/Main/Topbar"
 import logo from "../../Photos/logo.png";
+import PWbackImg from "../../Photos/PWbackImg.png";
+import LoginBG2 from "../../Photos/LoginBG2.png";
 
 class Mainpage extends React.Component{
+    count=0;
+
+    countNum = () => {
+        this.setState({
+            count: this.count++
+        }, () => {
+                this.getNum();
+            }
+        )
+    }
+
+    getNum = () => {
+        console.log(this.count)
+        if(this.count === 4){
+            window.location.replace("/main")
+        }
+    }
+
     render(){
+        const {
+            countNum
+        } = this;
+        
         return(
             <Frame>
                 <Topbar></Topbar>
                 <Logo>
-                    <Img src={logo}/>
+                <Img src={logo}/>
                 </Logo>
-                <IFrame>
-                    <IPFrame>
-                        <div>ID</div>
-                        <ID placeholder="이름을 입력하세요."></ID>
-                    </IPFrame>
-                    <IPFrame>
-                        <div>PW</div>
-                        <PW placeholder="비밀번호를 입력하세요." type="password"></PW>
-                    </IPFrame>
-                </IFrame>
-                <BFrame>
-                <Link to={"/main"} style={{ textDecoration: "none" }}>로그인</Link>
-                </BFrame>
+                <PadFrame>
+                    <NButton onClick={countNum}>
+                        <NumFrame>1</NumFrame>
+                    </NButton>
+                    <NButton>
+                        <NumFrame>2</NumFrame>
+                    </NButton>
+                    <NButton>
+                        <NumFrame>3</NumFrame>
+                    </NButton>
+                    <NButton>
+                        <NumFrame>4</NumFrame>
+                    </NButton>
+                    <NButton>
+                        <NumFrame>5</NumFrame>
+                    </NButton>
+                    <NButton>
+                        <NumFrame>6</NumFrame>
+                    </NButton>
+                    <NButton>
+                        <NumFrame>7</NumFrame>
+                    </NButton>
+                    <NButton>
+                        <NumFrame>8</NumFrame>
+                    </NButton>
+                    <NButton>
+                        <NumFrame>9</NumFrame>
+                    </NButton>
+                    <NButton>
+                        <NumFrame>얼굴인식</NumFrame>
+                    </NButton>
+                    <NButton>
+                        <NumFrame>0</NumFrame>
+                    </NButton>
+                    <NButton>
+                        <NumFrame>지우기</NumFrame>
+                    </NButton>
+                </PadFrame>
             </Frame>
         )
     }
@@ -33,65 +81,58 @@ class Mainpage extends React.Component{
 const Frame = styled.div`
     height: 100vh;
     display: grid;
-    grid-template-rows: 5% 10% 25% 30% 15% 15%;
+    grid-template-rows: 5% 45% 50%;
     grid-template-areas:
     "topbar"
-    "."
     "logo"
-    "iframe"
-    "button"
-    "."
+    "pad"
     ;
 `;
 
 const Logo = styled.div`
+    background: url(${LoginBG2});
+    background-size: cover;
     grid-area: logo;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
 `;
 
 const Img = styled.img`
     display: flex;
     justify-content: center;
     text-align: center;
-    width: 10em;
-    height: 10em;
+    width: 13em;
+    height: 13em;
     object-fit: cover;
 `;
 
-const IFrame = styled.div`
-    grid-area: iframe;
+const PadFrame = styled.div`
     display: grid;
-    grid-template-rows: 50% 50%;
-    grid-template-areas: "ID" "PW";
+    grid-template-rows: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
 
-`;
+`
 
-const IPFrame = styled.div`
-    padding-left: 5%;
-    padding-top: 10%;
-`;
-
-const ID = styled.input`
-    grid-area: ID;
-    font-size: 1rem;
-    width: 90%;
-    height: 2rem;
-`;
-
-const PW = styled.input`
-    grid-area: PW;
-    font-size: 1rem;
-    width: 90%;
-    height: 2rem;
-`;
-
-const BFrame = styled.div`
-    grid-area: button;
+const NumFrame = styled.div`
     display: flex; 
     align-items: center; 
     justify-content: center; 
-`;
+    font-size: large;
+    &:hover {
+        font-size: xx-large;
+    }
+`
+
+const NButton = styled.button`
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+        background: url(${PWbackImg});
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+`
 
 export default Mainpage;
