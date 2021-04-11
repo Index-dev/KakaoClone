@@ -1,18 +1,23 @@
 import React from 'react';
 import Clock from 'react-live-clock';
 import styled from "styled-components";
-import {FcChargeBattery} from "react-icons/fc";
-import {CgSignal} from "react-icons/cg";
+import {IoBatteryFullSharp} from "react-icons/io5";
+import { FaSignal } from "react-icons/fa";
 
 class Topbar extends React.Component {
     render(){
         return(
             <Frame>
-                <Signal><Sig/></Signal>
                 <Time>
                     <C format={'HH:mm'} ticking={true} timezone={'Asia/Seoul'} />
                 </Time>
-                <BFrame><Battery/></BFrame>
+                <Grid>
+                    <Icons>
+                        <Signal><Sig/></Signal>
+                        <Net>LTE</Net>
+                        <BFrame><Battery/></BFrame>
+                    </Icons>
+                </Grid>
             </Frame>
         )
     }
@@ -20,44 +25,56 @@ class Topbar extends React.Component {
 
 const Frame = styled.div`
     grid-area: topbar;
-    padding-left: 5%;
+    padding-left: 10%;
     padding-right: 5%;
-    display: grid;
-    grid-template-columns: 10% auto 10%;
-    grid-template-areas: 'signal time battery';
+    display: flex;
+    justify-content: space-between;
+`
+
+const Grid = styled.div`
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+`
+
+const Icons = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 4em;
 `
 
 const Signal = styled.div`
-    grid-area: signal;
     display: flex; 
     align-items: center; 
 
 `
 
+const Net = styled.div`
+    display: flex; 
+    align-items: center;
+`
+
 const Time = styled.div`
-    grid-area: time;
     display: flex; 
     align-items: center; 
     justify-content: center; 
 `
 
 const BFrame = styled.div`
-    grid-area: battery;
     display: flex; 
     align-items: center; 
 `
 
-export const Battery = styled(FcChargeBattery)`
-    transform: rotate(90deg);
-    font-size: xx-large;
+export const Battery = styled(IoBatteryFullSharp)`
+    font-size: x-large;
 `
 
 export const C = styled(Clock)`
-    font-size: xx-large;
+    font-size: x-large;
 `
 
-export const Sig = styled(CgSignal)`
-    font-size: xx-large;
+export const Sig = styled(FaSignal)`
+    font-size: large;
 `
 
 export default Topbar;
