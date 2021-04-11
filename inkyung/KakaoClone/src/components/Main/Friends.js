@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import Profile from "../Main/profile";
-import F1 from "../../Photos/F1.png";
-import F2 from "../../Photos/F2.png";
-import F3 from "../../Photos/F3.png";
+import Bprofile from "../../Photos/profile.png";
 
 class Friends extends React.Component {
     state={
@@ -14,17 +12,38 @@ class Friends extends React.Component {
         this.setState({
             showProfile: !this.state.showProfile,
         });
+        
       }
 
     render(){
 
         return(
-            <div>
+            <Out>
+            <Line></Line>
+            <FavFrame>
+                <FTitle>즐겨찾기</FTitle>
+                <FList>
+                    <Fprofile>
+                        <Fphoto>
+                            <IMG src={Bprofile}></IMG>
+                        </Fphoto>
+                        <InfoF>
+                            <Fname>김영희</Fname>
+                            <Message>🧸</Message>
+                        </InfoF>
+                        <MDiv>
+                            <Music>Cry for Me - Camila Cabello ▷</Music>
+                        </MDiv>
+                    </Fprofile>
+                </FList>
+            </FavFrame>
+            <Line></Line>
+            <FTitle>친구 3</FTitle>
             <Frame>
                 <Fprofile>
                     <Fphoto>
                         <PButton onClick={this.toggleProfile.bind(this)}>
-                        <IMG src={F1}></IMG>
+                        <IMG src={Bprofile}></IMG>
                         </PButton>
                     </Fphoto>
                     <InfoF>
@@ -37,7 +56,7 @@ class Friends extends React.Component {
                 </Fprofile>
                 <Fprofile>
                     <Fphoto>
-                        <IMG src={F2}></IMG>
+                        <IMG src={Bprofile}></IMG>
                     </Fphoto>
                     <InfoF>
                         <Fname>김철수</Fname>
@@ -49,7 +68,7 @@ class Friends extends React.Component {
                 </Fprofile>
                 <Fprofile>
                     <Fphoto>
-                        <IMG src={F3}></IMG>
+                        <IMG src={Bprofile}></IMG>
                     </Fphoto>
                     <InfoF>
                         <Fname>김영희</Fname>
@@ -63,17 +82,34 @@ class Friends extends React.Component {
             {this.state.showProfile?(
                 <Profile cancelProfile={this.toggleProfile.bind(this)}/>
             ) : null}
-            </div>
+            </Out>
         )
     }
 }
 
-const Frame = styled.div`
+const Out = styled.div`
     grid-area: friendlist;
+    padding-right: 3%;
+`
+
+const FavFrame = styled.div`
+
+`
+
+const FTitle = styled.div`
+    font-weight: 100;
+`
+
+const FList = styled.div`
     display: grid;
     grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
     overflow: auto;
-    padding-right: 3%;
+`
+
+const Frame = styled.div`
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+    overflow: auto;
 `
 
 const Fprofile = styled.div`
@@ -97,11 +133,11 @@ const IMG = styled.img`
     display: flex;
     justify-content: center;
     text-align: center;
-    width: 2.6em;
+    width: 2.2em;
     height: 2.2em;
     object-fit: cover;
-    border-radius: 30%;
-    border: 1px solid gray;
+    border-radius: .8em;
+    border: 1px solid #ededed;
 `
 
 const PButton = styled.div`
@@ -137,11 +173,21 @@ const Music = styled.div`
     font-weight: 100;
     border: 1px solid gray;
     border-radius: 2em;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
     border-color: #2ced1f;
+`
+
+
+
+const Line = styled.hr`
+    border:none;
+    width: 98%;
+    height: 1px;
+    background-color: lightgray;
+    margin-left: 0;
 `
 
 export default Friends;
