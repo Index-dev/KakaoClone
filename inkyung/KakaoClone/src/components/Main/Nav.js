@@ -27,8 +27,6 @@ class Nav extends React.Component {
                 <Setting>
                 <Link to={"/setting"} style={{ textDecoration: "none" }}><Icon src={Nav5}/></Link>
                 </Setting>
-                
-
             </Frame>
         )
     }
@@ -43,6 +41,7 @@ const Frame = styled.div`
     grid-template-columns: repeat(5, 1fr);
     grid-template-areas: "home talk news search setting";
     padding-top: 5%;
+    z-index: 10;
 `
 
 const Home = styled.div`
