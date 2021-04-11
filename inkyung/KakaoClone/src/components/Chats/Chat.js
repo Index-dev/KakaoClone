@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import F1 from "../../Photos/F1.png";
-import F3 from "../../Photos/F3.png";
+import Bprofile from "../../Photos/profile.png";
 
 class Info extends React.Component{
     render(){
@@ -9,10 +8,10 @@ class Info extends React.Component{
             <Frame>
                 <ChatF>
                     <Fphoto>
-                        <IMG src={F3}/>
+                        <IMG src={Bprofile}/>
                     </Fphoto>
                     <CInfo>
-                        <Fname>친구3</Fname>
+                        <Fname>김영희</Fname>
                         <Content>이거슨 내용이다.</Content>
                     </CInfo>
                     <Time>
@@ -21,10 +20,10 @@ class Info extends React.Component{
                 </ChatF>
                 <ChatF>
                     <Fphoto>
-                        <IMG src={F1}/>
+                        <IMG src={Bprofile}/>
                     </Fphoto>
                     <CInfo>
-                        <Fname>친구1</Fname>
+                        <Fname>홍길동</Fname>
                         <Content>테스트용 내용이다.</Content>
                     </CInfo>
                     <Time>
@@ -64,11 +63,11 @@ const IMG = styled.img`
     display: flex;
     justify-content: center;
     text-align: center;
-    width: 2.5em;
-    height: 2.5em;
+    width: 2.2em;
+    height: 2.2em;
     object-fit: cover;
-    border-radius: 50%;
-    border: 1px solid gray;
+    border-radius: .8em;
+    border: 1px solid #ededed;
 `
 const CInfo = styled.div`
     grid-area: info;
