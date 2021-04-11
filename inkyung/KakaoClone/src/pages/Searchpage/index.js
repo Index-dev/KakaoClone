@@ -1,14 +1,41 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import Topbar from "../../components/Main/Topbar";
 import Nav from "../../components/Main/Nav";
 import {FcFinePrint} from "react-icons/fc";
 
 class Searchpage extends React.Component{
-    state={
-        input:'',
-        url: 'https://m.search.naver.com/search.naver?where=m&sm=top_hty&fbm=1&ie=utf8&query='
-    }
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+          position: 0,
+          input:'',
+          url: 'https://m.search.naver.com/search.naver?where=m&sm=top_hty&fbm=1&ie=utf8&query=',
+          show: true
+        }
+      }
+
+    componentDidMount = () => {
+        window.addEventListener('scroll', this.handleScroll);
+        const position = this.ref.scrollTop;
+        this.setState({position});
+      };
+    
+      componentWillUnMount = () => {
+        window.removeEventListener('scroll', this.handleScroll);
+      };
+     
+    handleScroll = () => {
+        if(this.state.position <= this.ref.scrollTop){
+            //초기 위치값이 지금보다 작으면 내려와 있음.
+            this.setState({show : false})
+        }
+        else{
+            this.setState({show : true})
+        }
+        this.setState({position : this.ref.scrollTop})
+      }
 
     changeItem = (e) => {
         this.setState({
@@ -38,48 +65,113 @@ class Searchpage extends React.Component{
     }
 
     render(){
-    const { input } = this.state;
+    const {input, show} = this.state;
     const {
         changeItem,
         createUrl,
-        Enterkey
+        Enterkey,
+        handleScroll
       } = this;
 
         return(
             <Frame>
                 <Topbar></Topbar>
-                <SFrame>
-                    <InputF value={input} onKeyPress={Enterkey}onChange={changeItem}></InputF>
-                    <Button onClick={createUrl}><Sicon></Sicon></Button>
-                </SFrame>
+                <Tab>탭</Tab>
+                <Out>
+                    <Grid ref={(ref)=>{this.ref=ref}} onScroll={handleScroll}>
+                        <Ad></Ad>
+                        <Info>정보</Info>
+                        <Space/>
+                        <News>뉴스</News>
+                        <Space/>
+                        <Live></Live>
+                        <Space/>
+                        <Live></Live>
+                    </Grid>
+                    {show ? 
+                    <C>
+                        <SearchF>
+                            <InputF></InputF>
+                        </SearchF>
+                    </C> 
+                    : <div/>}
+                </Out>
                 <Nav></Nav>
             </Frame>
         )
     }
 }
 
+const C = styled.div`
+    position: relative;
+    top: -15%;
+    z-index: 0;
+`
+
+const Out = styled.div`
+    grid-area: search;
+
+`
+
 const Frame = styled.div`
-    height: 100vh;
+    height: 100vh;  
     display: grid;
-    grid-template-rows: 5% 85% 10%;
+    grid-template-rows: 5% 7% 78% 10%;
     grid-template-areas:
         "topbar"
+        "tab"
         "search"
         "nav"
     ;
 `;
 
-const SFrame = styled.div`
-    grid-area: search;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+const Grid = styled.div`
+    height:100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 12% 8% 2% 48% 2% 20% 2% 20%;
+    overflow: auto;
 `;
 
+const Tab = styled.div`
+    grid-area: tab;
+`
+
+const Ad = styled.div`
+    background-color: lightgray;
+`
+
+const Info = styled.div``
+
+
+const Space = styled.div`
+    background-color: lightgray;
+`
+
+const News = styled.div`
+
+`
+
+const Live = styled.div`
+    background-color: black;
+`
+
+
+const SearchF = styled.div`
+    background-color: white;
+    height: 5em;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    display: flex;
+    justify-content: center;
+    padding-top: .8em
+`
+
 const InputF = styled.input`
-    border: 2px solid;
+    border: 2px solid #ffeb52;
     border-radius: 5px;
-    height: 25px;
+    height: 30%;
+    width: 90%;
 `;
 
 const Button = styled.button`
