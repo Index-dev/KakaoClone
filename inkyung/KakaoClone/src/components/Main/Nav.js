@@ -19,10 +19,10 @@ class Nav extends React.Component {
                 <Link to={"/chatting"} style={{ textDecoration: "none" }}><Icon src={Nav2}/></Link>
                 </Talk>
                 <News>
-                <Link to={"/shopping"} style={{ textDecoration: "none" }}><Icon src={Nav3}/></Link>
+                <Link to={"/search"} style={{ textDecoration: "none" }}><Icon src={Nav3}/></Link>
                 </News>
                 <Search>
-                <Link to={"/search"} style={{ textDecoration: "none" }}><Icon src={Nav4}/></Link>
+                <Link to={"/shopping"} style={{ textDecoration: "none" }}><Icon src={Nav4}/></Link>
                 </Search>
                 <Setting>
                 <Link to={"/setting"} style={{ textDecoration: "none" }}><Icon src={Nav5}/></Link>
