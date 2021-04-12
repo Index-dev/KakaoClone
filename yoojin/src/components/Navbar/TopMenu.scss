@@ -1,15 +1,16 @@
-.topbar__frame{
+.topmenu__frame{
     display: grid;
     grid-auto-flow: column;
     height: 8%;
-    background-color: bisque
+    background-color: bisque;
+    font-family: "야놀자_야체_Regular";
 }
-.topbar__title{
+.topmenu__title{
     align-self: center;
     justify-self: left;
     margin-left: 10%;
 }
-.topbar__subfunc{
+.topmenu__subfunc{
     display: grid;
     grid-auto-flow: column;
     align-content: space-around;
@@ -18,5 +19,4 @@
         width: 15px;
         height: 15px;
     }
-
 }

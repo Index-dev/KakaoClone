@@ -1,4 +1,4 @@
-.profile__form {
+.chat__form {
     display: grid;
     grid-auto-flow: column;
     align-items: center;
@@ -6,7 +6,7 @@
     background-color: #ffffff;
     height: 12%;
 }
-.profile__form > .profile__image {
+.chat__form > .chat__image {
     justify-self: center;
     img {
         width: 25px;
@@ -14,12 +14,11 @@
     }
 }
 
-.profile__form > .profile__name {
+.chat__form > .chat__name {
     justify-self: left;
     margin-left: 6%;
-    font-family: "야놀자_야체_Regular";
 }
-.profile__form > .profile__message {
+.chat__form > .chat__message {
     justify-self: right;
     margin-right: 6%;
     // direction: rtl;

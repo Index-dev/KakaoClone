@@ -1,13 +1,19 @@
 .main__content {
-    display: flex;
-    width: 330px;
-    height: 470px;
-    text-align: center;
-    justify-content: center;
-    flex-flow: column;
-    background-color: #ffffff;
-  }
-  .main__content > .content{
-      height: 88%;
-      background-color: bisque;
-  }
+  display: flex;
+  width: 330px;
+  height: 470px;
+  text-align: center;
+  justify-content: center;
+  flex-flow: column;
+  background-color: #ffffff;
+  font-family: "야놀자_야체_Regular";
+}
+.main__content > .content {
+  height: 88%;
+  background-color: bisque;
+}
+.main__divider{
+    text-align: left;
+    background-color: rgb(255, 245, 232);
+    padding-left: 2%;
+}
