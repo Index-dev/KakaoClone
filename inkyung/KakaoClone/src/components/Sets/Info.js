@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import InfoList from './InfoList';
-import Ad from "../../Photos/ad.gif";
+import Ad from "../../Photos/Ad2.mp4";
 
 class Info extends React.Component{
     render(){
@@ -27,7 +27,8 @@ class Info extends React.Component{
                     <InfoList/>
                 </Infos>
                 <Advertisement>
-                    <IMG src={Ad}/>
+                    <V muted autoPlay loop src={Ad} type="video/mp4">
+                    </V>
                     <Text>Ad</Text>
                 </Advertisement>
             </Frame>
@@ -153,10 +154,13 @@ const Advertisement = styled.div`
     background-color: lightgrey;
 `
 
-const IMG = styled.img`
+const V = styled.video`
+    display: flex;
+    justify-content: center;
+    text-align: center;
     width: 100%;
     height: 115%;
-    object=fit: cover;
+    object-fit: cover;
 `
 
 const Text = styled.div`

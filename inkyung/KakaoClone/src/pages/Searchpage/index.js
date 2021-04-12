@@ -3,7 +3,8 @@ import styled from "styled-components";
 import Topbar from "../../components/Main/Topbar";
 import Nav from "../../components/Main/Nav";
 import Tab from "../../components/Search/Tab";
-import {FcFinePrint} from "react-icons/fc";
+import Contents from "../../components/Search/Contents";
+import {BiSearch} from "react-icons/bi";
 
 class Searchpage extends React.Component{
     constructor(props) {
@@ -80,19 +81,16 @@ class Searchpage extends React.Component{
                 <Tab/>
                 <Out>
                     <Grid ref={(ref)=>{this.ref=ref}} onScroll={handleScroll}>
-                        <Ad></Ad>
-                        <Info>정보</Info>
-                        <Space/>
-                        <News>뉴스</News>
-                        <Space/>
-                        <Live></Live>
-                        <Space/>
-                        <Live></Live>
+                        <Contents/>
                     </Grid>
                     {show ? 
                     <C>
                         <SearchF>
-                            <InputF></InputF>
+                            <InputF>
+                                <Text>#</Text>
+                                <Input placeholder="검색어를 입력해주세요"></Input>
+                                <Button><SearchI/></Button>
+                            </InputF>
                         </SearchF>
                     </C> 
                     : <div/>}
@@ -114,6 +112,12 @@ const Out = styled.div`
 
 `
 
+const Grid = styled.div`
+    height:100%;
+    width: 100%;
+    overflow: auto;
+`
+
 const Frame = styled.div`
     height: 100vh;  
     display: grid;
@@ -126,34 +130,6 @@ const Frame = styled.div`
     ;
 `;
 
-const Grid = styled.div`
-    height:100%;
-    width: 100%;
-    display: grid;
-    grid-template-rows: 12% 8% 2% 48% 2% 20% 2% 20%;
-    overflow: auto;
-`;
-
-const Ad = styled.div`
-    background-color: lightgray;
-`
-
-const Info = styled.div``
-
-
-const Space = styled.div`
-    background-color: lightgray;
-`
-
-const News = styled.div`
-
-`
-
-const Live = styled.div`
-    background-color: black;
-`
-
-
 const SearchF = styled.div`
     background-color: white;
     height: 5em;
@@ -164,12 +140,37 @@ const SearchF = styled.div`
     padding-top: .8em
 `
 
-const InputF = styled.input`
-    border: 2px solid #ffeb52;
-    border-radius: 5px;
-    height: 30%;
+const InputF = styled.div`
+    border: 2.8px solid #fae64d;
+    border-radius: .4em;
+    height: 1.5em;
     width: 90%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+
 `;
+
+const Input = styled.input`
+    height: 90%;
+    width: 90%;
+    padding: 0;
+    border: 0;
+
+    ::placeholder{
+        color: #c9c9c9;
+        font-weight: 100;
+        font-size: large;
+    }
+`
+
+const Text = styled.div`
+    font-weight: 100;
+    color: #fae64d;
+    font-size: larger;
+    padding-left: 3%;
+    padding-right: 3%;
+`
 
 const Button = styled.button`
     border: none;
@@ -180,9 +181,8 @@ const Button = styled.button`
 
 `;
 
-export const Sicon = styled(FcFinePrint)`
-    font-size: xx-large;
-
+export const SearchI = styled(BiSearch)`
+    font-size: x-large;
 `
 
 export default Searchpage;
