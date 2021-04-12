@@ -3,7 +3,7 @@ import Chat from '../../components/Chat/Chat'
 import BottomMenu from '../../components/Navbar/BottomMenu'
 import TopBar from '../../components/Navbar/TopBar'
 import TopMenu from '../../components/Navbar/TopMenu'
-import './style.css'
+import './style.scss'
 
 function ChatPage() {
     return (
@@ -12,6 +12,13 @@ function ChatPage() {
             <div className="main__content">
                 <TopMenu tabTitle="채팅"/>
                 <div className="content">
+                    <Chat/>
+                    <Chat/>
+                    <Chat/>
+                    <Chat/>
+                    <Chat/>
+                    <Chat/>
+                    <Chat/>
                     <Chat/>
                 </div>
             <BottomMenu/>
