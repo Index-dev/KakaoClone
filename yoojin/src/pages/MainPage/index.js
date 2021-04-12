@@ -1,5 +1,6 @@
 import React from "react";
 import BottomMenu from "../../components/Navbar/BottomMenu";
+import Divider from "../../components/Navbar/Divider";
 import TopBar from "../../components/Navbar/TopBar";
 import TopMenu from "../../components/Navbar/TopMenu";
 import Profile from "../../components/Profile/Profile";
@@ -12,21 +13,11 @@ const Main = () => {
         <TopMenu tabTitle="목록" />
         <div className="content">
           <Profile />
-          <div className="main__divider">
-              내 멀티 프로필
-          </div>
-          <div className="main__divider">
-              생일인 친구
-          </div>
-          <div className="main__divider">
-              즐겨찾기
-          </div>
-          <div className="main__divider">
-              채널
-          </div>
-          <div className="main__divider">
-              친구
-          </div>
+          <Divider dividerTitle="내 멀티 프로필" />
+          <Divider dividerTitle="생일인 친구" />
+          <Divider dividerTitle="즐겨찾기" />
+          <Divider dividerTitle="채널" />
+          <Divider dividerTitle="친구" />
         </div>
         <BottomMenu />
       </div>
