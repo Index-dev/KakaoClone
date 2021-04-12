@@ -6,9 +6,9 @@ import lowBattery from './../../img/low-battery-level.png'
 function TopBar() {
     return (
         <div className="Topbar">
-            <img src={wifi}/>
-            <img src={signal}/>
-            <img src={lowBattery}/>
+            <img src={wifi} alt=""/>
+            <img src={signal} alt=""/>
+            <img src={lowBattery} alt=""/>
         </div>
     )
 }

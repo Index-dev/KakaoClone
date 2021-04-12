@@ -7,6 +7,7 @@ import Topbar from "../Navbar/TopBar";
 const App = () => {
   return (
     <div className="App">
+      {/* <Topbar /> */}
       <BrowserRouter>
         <Switch>
           <Route exact={true} path="/" component={Login} />

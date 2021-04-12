@@ -1,0 +1,22 @@
+.topbar__frame{
+    display: grid;
+    grid-auto-flow: column;
+    height: 8%;
+    background-color: bisque
+}
+.topbar__title{
+    align-self: center;
+    justify-self: left;
+    margin-left: 10%;
+}
+.topbar__subfunc{
+    display: grid;
+    grid-auto-flow: column;
+    align-content: space-around;
+    justify-items: center;
+    & > img {
+        width: 15px;
+        height: 15px;
+    }
+
+}

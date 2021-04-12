@@ -1,6 +1,7 @@
 import React from 'react'
-import BottomBar from '../../components/Navbar/BottomBar';
+import BottomMenu from '../../components/Navbar/BottomMenu';
 import TopBar from '../../components/Navbar/TopBar';
+import TopMenu from '../../components/Navbar/TopMenu';
 import Profile from '../../components/Profile/Profile';
 import './style.css';
 const Main=()=> {
@@ -8,10 +9,11 @@ const Main=()=> {
         <div className="Frame">
             <TopBar/>
             <div className="main__content">
+            <TopMenu/>
                 <div className="content">
                     <Profile/>
                 </div>
-            <BottomBar/>
+            <BottomMenu/>
             </div>
         </div>
     )

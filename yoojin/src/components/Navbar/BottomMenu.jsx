@@ -1,31 +1,31 @@
 import React from "react";
-import "./BottomBar.css";
+import "./BottomMenu.css";
 import users from "../../img/user.png";
 import chat from "../../img/messenger.png";
 import channel from "../../img/global-network.png";
 import shopping from "../../img/shopping-bag.png";
 import etc from "../../img/menu.png";
 
-const BottomBar = () => {
+const BottomMenu = () => {
   return (
     <div className="bottom__content">
       <div>
-        <img src={users} />
+        <img src={users} alt="" />
       </div>
       <div>
-        <img src={chat} />
+        <img src={chat} alt=""/>
       </div>
       <div>
-        <img src={channel} />
+        <img src={channel} alt=""/>
       </div>
       <div>
-        <img src={shopping} />
+        <img src={shopping} alt=""/>
       </div>
       <div>
-        <img src={etc} />
+        <img src={etc} alt=""/>
       </div>
     </div>
   );
 };
 
-export default BottomBar;
+export default BottomMenu;
