@@ -6,7 +6,7 @@ import LoginForm from "components/auth/loginForm";
 
 const Container = styled.div`
   width: 100%;
-  height: 100%;
+  height: ${window.innerHeight - 20}px;
   position: relative;
   background-color: rgba(0, 0, 0, 1);
   z-index: -1;

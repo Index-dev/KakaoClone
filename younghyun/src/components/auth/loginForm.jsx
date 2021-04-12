@@ -4,11 +4,11 @@ import Input from "components/input/login";
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  display: grid;
-  justify-content: center;
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  grid-template-columns: repeat(1, 1fr);
-  border: 1px solid white;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.5);
 `;
 
 function LoginTemplate() {

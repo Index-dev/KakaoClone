@@ -16,7 +16,6 @@ const Container = styled.div`
   justify-content: center;
   /* background-color: rgba(0, 0s, 0, 0.7); */
   transform: translateX(-50%) translateY(-38%);
-  border: 1px solid white;
   z-index: 1;
 `;
 
