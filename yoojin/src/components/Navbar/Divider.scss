@@ -1,5 +1,21 @@
-.divider{
-    text-align: left;
+.divider__frame{    
     background-color: rgb(255, 245, 232);
+    height: 25px;
     padding-left: 2%;
+    padding-right: 2%;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    & div{
+        text-align: left;
+    }
+    & div > img{
+        width: 10px;
+        height: 10px;
+        float: right;
+        & :hover{
+            cursor: pointer;
+        }
+    }
+
 }

@@ -7,8 +7,8 @@ const Profile =()=> {
             <div className="profile__image">
                 <img src={user} alt=""/>
             </div>
-            <div className="profile__name">이름</div>
-            <div className="profile__message">message</div>
+            <div className="profile__name">사용자 이름</div>
+            <div className="profile__message">상태메세지</div>
         </div>
     )
 }
