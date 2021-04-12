@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import styled from "styled-components";
 import Topbar from "../../components/Main/Topbar";
 import Nav from "../../components/Main/Nav";
+import Tab from "../../components/Search/Tab";
 import {FcFinePrint} from "react-icons/fc";
 
 class Searchpage extends React.Component{
@@ -76,7 +77,7 @@ class Searchpage extends React.Component{
         return(
             <Frame>
                 <Topbar></Topbar>
-                <Tab>탭</Tab>
+                <Tab/>
                 <Out>
                     <Grid ref={(ref)=>{this.ref=ref}} onScroll={handleScroll}>
                         <Ad></Ad>
@@ -132,10 +133,6 @@ const Grid = styled.div`
     grid-template-rows: 12% 8% 2% 48% 2% 20% 2% 20%;
     overflow: auto;
 `;
-
-const Tab = styled.div`
-    grid-area: tab;
-`
 
 const Ad = styled.div`
     background-color: lightgray;
