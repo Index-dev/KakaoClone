@@ -21,9 +21,9 @@
     justify-self: right;
     & .profile__topbar__menuItem {
       border: 0.1em solid;
-      border-radius: 10px;
-      //   border-color: #727272;
-      padding: 3px;
+      border-radius: 20px;
+      border-color: #727272;
+      padding: 4px;
     }
   }
 }
@@ -41,15 +41,15 @@
 }
 .profile__user_info {
   padding-bottom: 5px;
-  
 }
 .profile__image > img {
-  width: 40px;
-  height: 40px;
-  border: 2px solid;
-  border-color: #727272;
-  border-radius: 50px;
-  padding: 10px;
+  background-color: #727272;
+  width: 22%;
+  height: 22%;
+  border-radius: 50%;
+}
+.profile__name{
+    margin: 5px 0px 5px 0px;
 }
 .profile__bottombar {
   display: grid;
