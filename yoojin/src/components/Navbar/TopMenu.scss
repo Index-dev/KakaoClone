@@ -1,0 +1,25 @@
+.topmenu__frame{
+    display: grid;
+    grid-auto-flow: column;
+    height: 10%;
+    grid-template-columns: 60% 40% ;
+    background-color: bisque;
+    font-family: "야놀자_야체_Regular";
+    font-size: 120%;
+    font-weight: bold;
+}
+.topmenu__title{
+    align-self: center;
+    justify-self: left;
+    margin-left: 10%;
+}
+.topmenu__subfunc{
+    display: grid;
+    grid-auto-flow: column;
+    align-content: space-around;
+    justify-items: center;
+    & > img {
+        width: 15px;
+        height: 15px;
+    }
+}

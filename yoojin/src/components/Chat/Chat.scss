@@ -1,0 +1,25 @@
+.chat__form {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    grid-template-columns: 15% 40% 45%;
+    background-color: #ffffff;
+    height: 15%;
+}
+.chat__form > .chat__image {
+    justify-self: center;
+    img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.chat__form > .chat__name {
+    justify-self: left;
+    margin-left: 6%;
+}
+.chat__form > .chat__message {
+    justify-self: right;
+    margin-right: 6%;
+    // direction: rtl;
+}

@@ -1,0 +1,17 @@
+.Frame > .main__content > .content{
+    overflow-y: auto;
+    &::-webkit-scrollbar{
+        width: 10px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: rgb(247, 168, 66);
+        border-radius: 10px;
+        // background-clip: padding-box;
+        // border: 2px solid transparent;
+    }
+    &::-webkit-scrollbar-track{
+        background-color: rgb(248, 207, 152);
+        // border-radius: 10px;
+        box-shadow: inset 0px 0px 5px white;
+    }
+}

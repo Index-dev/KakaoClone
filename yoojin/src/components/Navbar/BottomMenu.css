@@ -1,0 +1,11 @@
+.bottom__content{
+    display: grid;
+    grid-auto-flow: column;
+    height: 12%;
+    align-items: center;
+}
+.bottom__item{
+    width: 30px;
+    height: 30px;
+    justify-self: center;
+}

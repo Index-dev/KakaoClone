@@ -1,0 +1,30 @@
+.profile__form {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    grid-template-columns: 15% 40% 45%;
+    background-color: #ffffff;
+    height: 15%;
+}
+.profile__form > .profile__image {
+    justify-self: center;
+    img {
+        border: solid 2px;
+        border-radius: 50%;
+        width: 70%;
+        // width: 35px;
+        // height: 35px;
+        height: 100%;
+    }
+}
+
+.profile__form > .profile__name {
+    justify-self: left;
+    margin-left: 6%;
+    font-family: "야놀자_야체_Regular";
+}
+.profile__form > .profile__message {
+    justify-self: right;
+    margin-right: 6%;
+    // direction: rtl;
+}
