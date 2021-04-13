@@ -168,14 +168,16 @@ const Text = styled.div`
     position: absolute;
     top: 70.5%;
     left: 93%;
-    color: black;
-    border: 1px solid lightgray;
+    color: white;
+    border: 1px solid #cccccc;
     border-radius: .4em;
-    background-color: lightgray;
+    background-color: #cccccc;
     width: 1em;
     padding-left: 1%;
     padding-right: 1%;
     font-size: smaller;
+    opacity: 0.5;
+    font-weight: 100;
 `
 
 export default Info;
