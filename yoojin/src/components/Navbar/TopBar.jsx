@@ -3,7 +3,7 @@ import './TopBar.scss';
 import wifi from './../../img/wifi.png'
 import signal from './../../img/signal.png'
 import lowBattery from './../../img/low-battery-level.png'
-function TopBar() {
+const TopBar = () => {
     return (
         <div className="Topbar">
             <img src={wifi} alt=""/>
