@@ -110,7 +110,7 @@ const Grid = styled.div`
     width: 100%;
     overflow: auto;
     display: grid;
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 12% 90%;
     grid-template-areas:
         "tab"
         "content"
