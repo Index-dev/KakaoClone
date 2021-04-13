@@ -8,6 +8,8 @@ import gift_box from "../../img/gift-box.png";
 import userImage from "../../img/user.png";
 import chat from "../../img/chat_1.png";
 import setting from "../../img/settings.png";
+import edit from "../../img/edit.png";
+import story from "../../img/hangouts.png";
 
 const Profile = () => {
   return (
@@ -41,11 +43,11 @@ const Profile = () => {
               채팅하기
             </div>
             <div className="profile__bottombar__menuitem">
-              <img src={chat} alt="" />
+              <img src={edit} alt="" />
               프로필편집
             </div>
             <div className="profile__bottombar__menuitem">
-              <img src={chat} alt="" />
+              <img src={story} alt="" />
               까까오스토리
             </div>
           </div>

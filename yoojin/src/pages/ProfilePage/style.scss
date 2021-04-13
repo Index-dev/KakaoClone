@@ -42,11 +42,11 @@
 .profile__user_info {
   border-top: 1px solid;
   border-color: #727272;
-  padding: 10px;
+  padding: 5px;
 }
 .profile__image > img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: 2px solid;
   border-color: #727272;
   border-radius: 50px;
@@ -63,8 +63,8 @@
     align-items: center;
     & > img {
       margin: 10px;
-      width: 15px;
-      height: 15px;
+      width: 20px;
+      height: v20px;
     }
   }
 }
