@@ -4,10 +4,12 @@ import { GrMailOption } from "react-icons/gr";
 import { AiOutlineCalendar, AiOutlineGift } from "react-icons/ai";
 import { FiGrid } from "react-icons/fi";
 import { RiBearSmileLine } from "react-icons/ri";
+import { SiMakerbot } from "react-icons/si";
 import { HiOutlineScissors } from "react-icons/hi";
 import { GiHanger } from "react-icons/gi";
 import { BiStoreAlt } from "react-icons/bi";
 import { ImSpoonKnife } from "react-icons/im";
+import { MdFace } from "react-icons/md";
 import { IoLogOutOutline,IoGameControllerOutline } from "react-icons/io5";
 
 class InfoList extends React.Component{
@@ -31,12 +33,20 @@ class InfoList extends React.Component{
                     <Text>캘린더</Text>
                 </Item>
                 <Item>
+                    <MakerI/>
+                    <Text>메이커스</Text>
+                </Item>
+                <Item>
                     <GiftI/>
                     <Text>선물하기</Text>
                 </Item>
                 <Item>
                     <EmojiI/>
                     <Text>이모티콘</Text>
+                </Item>
+                <Item>
+                    <FriendI/>
+                    <Text>프렌즈</Text>
                 </Item>
                 <Item>
                     <StoreI/>
@@ -146,7 +156,15 @@ font-size: xx-large;
 transform: rotate(90deg);
 `
 
-export const EmojiI = styled(RiBearSmileLine)`
+export const FriendI = styled(RiBearSmileLine)`
+font-size: xx-large;
+`
+
+export const EmojiI = styled(MdFace)`
+font-size: xx-large;
+`
+
+export const MakerI = styled(SiMakerbot)`
 font-size: xx-large;
 `
 
