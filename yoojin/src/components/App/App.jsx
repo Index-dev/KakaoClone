@@ -4,6 +4,7 @@ import Login from "../../pages/LoginPage";
 import Main from "../../pages/MainPage";
 import ChatPage from '../../pages/ChatPage';
 import Topbar from "../Navbar/TopBar";
+import Profile from "../../pages/ProfilePage";
 
 const App = () => {
   return (
@@ -12,7 +13,8 @@ const App = () => {
       <BrowserRouter>
         <Switch>
           <Route exact={true} path="/" component={Login} />
-          <Route path="/main" component={Main} />
+          <Route path="/main" component={Main} exact={true}/>
+          <Route path="/main/profile" component={Profile} />
           <Route path="/chat" component={ChatPage} />
         </Switch>
       </BrowserRouter>
