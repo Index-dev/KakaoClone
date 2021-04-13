@@ -88,8 +88,11 @@ class Searchpage extends React.Component{
                         <SearchF>
                             <InputF>
                                 <Text>#</Text>
-                                <Input placeholder="검색어를 입력해주세요"></Input>
-                                <Button><SearchI/></Button>
+                                <Input placeholder="검색어를 입력해주세요"
+                                 value={input} onKeyPress={Enterkey}onChange={changeItem}>
+
+                                 </Input>
+                                <Button onClick={createUrl}><SearchI/></Button>
                             </InputF>
                         </SearchF>
                     </C> 
@@ -116,6 +119,9 @@ const Grid = styled.div`
     height:100%;
     width: 100%;
     overflow: auto;
+    ::-webkit-scrollbar {
+        display: none;
+    }
 `
 
 const Frame = styled.div`
@@ -178,7 +184,6 @@ const Button = styled.button`
     display: flex; 
     align-items: center; 
     justify-content: center; 
-
 `;
 
 export const SearchI = styled(BiSearch)`
