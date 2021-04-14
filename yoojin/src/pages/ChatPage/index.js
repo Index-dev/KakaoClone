@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ChatListItem from "../../components/Chat/ChatListItem";
 import BottomMenu from "../../components/Navbar/BottomMenu";
 import TopBar from "../../components/Navbar/TopBar";
@@ -12,7 +13,12 @@ function ChatPage() {
       <div className="main__content">
         <TopMenu tabTitle="채팅" />
         <div className="content">
-          <ChatListItem />
+          <Link
+            to="/chattings/chat"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <ChatListItem />
+          </Link>
           <ChatListItem />
           <ChatListItem />
           <ChatListItem />
