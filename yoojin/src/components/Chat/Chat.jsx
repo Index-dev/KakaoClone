@@ -1,7 +1,11 @@
 import React from "react";
-
-function Chat() {
-  return <div>chat</div>;
-}
+import "./Chat.scss";
+const Chat = () => {
+  return (
+    <div className="Frame">
+      <p> 지워저라잇!!!</p>
+    </div>
+  );
+};
 
 export default Chat;
