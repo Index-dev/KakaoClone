@@ -7,7 +7,10 @@ const GlobalStyle = createGlobalStyle`
         justify-content:center;
         align-items:center;
         background-color: #f2f2f2;
+
+        font-family: 'Do Hyeon', sans-serif;
         color: #070707;
+        
         margin: 0;
     }
     
