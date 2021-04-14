@@ -8,7 +8,7 @@ const ChatListItem = () => {
         <img src={chatRoomImg} alt="" />
       </div>
       <div className="chatlistitem__name">
-        <div>chat room name</div>
+        <div>other user name</div>
         <div>last message</div>
       </div>
       <div className="chatlistitem__message">time</div>

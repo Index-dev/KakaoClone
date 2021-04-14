@@ -1,0 +1,83 @@
+.chat__frame {
+    display: flex;
+    width: 330px;
+    height: 470px;
+    text-align: center;
+    justify-content: center;
+    flex-flow: column;
+    //   background-color: #ffffff;
+    background-color: rgb(175, 175, 175);
+    //   background-color: #ffe4aa;
+    font-family: "야놀자_야체_Regular";
+}
+
+.chat__topbar {
+    display: grid;
+    grid-auto-flow: column;
+    align-content: center;
+    height: 10%;
+    grid-template-columns: 60% 40%;
+    background-color: bisque;
+    font-family: "야놀자_야체_Regular";
+    font-size: 120%;
+    font-weight: bold;
+
+    & .chat__topbar_left {
+        display: flex;
+        flex-direction: row;
+
+        img {
+            margin: 5px;
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    & .chat__topbar_right {
+        display: flex;
+        flex-direction: row-reverse;
+
+        &>img {
+            width: 15px;
+            height: 15px;
+            margin: 5px;
+        }
+    }
+}
+
+.chat__content {
+    height: 80%;
+    background-color: #fff0c7;
+
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        background-color: #ffffff;
+        margin: 15px;
+        float: left;
+    }
+}
+
+.chat__input {
+    height: 10%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 10% 70% 10% 10%;
+    align-items: center;
+    text-align: -webkit-center;
+    background-color: bisque;
+
+    &>img {
+        width: 20px;
+        height: 20px;
+    }
+
+    &>input {
+        height: 100%;
+        border: none;
+        font-family: "야놀자_야체_Regular";
+        font-size: 15px;
+    }
+
+}
