@@ -11,10 +11,6 @@ const Container = styled.div`
   position: absolute;
   top: 38%;
   left: 50%;
-
-  display: flex;
-  justify-content: center;
-  /* background-color: rgba(0, 0s, 0, 0.7); */
   transform: translateX(-50%) translateY(-38%);
   z-index: 1;
 `;
