@@ -1,11 +1,7 @@
 import LoginPresenter from "pages/auth/loginPresenter";
 
 function Login() {
-    return (
-        <LoginPresenter>
-            <div className="App">hi</div>
-        </LoginPresenter>
-    );
+  return <LoginPresenter />;
 }
 
 export default Login;
