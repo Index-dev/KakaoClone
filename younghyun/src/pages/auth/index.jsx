@@ -6,7 +6,7 @@ import LoginForm from "components/auth/loginForm";
 
 const Container = styled.div`
     width: 100%;
-    height: 98%;
+    height: 96%;
     position: relative;
     background-color: rgba(0, 0, 0, 1);
 `;
@@ -22,7 +22,7 @@ const BackgroundImage = styled.div`
     opacity: 70%;
 `;
 
-function LoginPresenter() {
+function Login() {
     return (
         <Container>
             <BackgroundImage />
@@ -33,4 +33,4 @@ function LoginPresenter() {
     );
 }
 
-export default LoginPresenter;
+export default Login;
