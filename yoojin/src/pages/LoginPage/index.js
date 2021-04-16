@@ -9,13 +9,13 @@ const Login = () => {
       <Topbar />
       <div className="login__content">
         <div className="title"> 77ㅏ77ㅏ오 TALK</div>
-        <img className="logo" src={logo} />
+        <img className="logo" src={logo} alt="" />
         <form>
           <input type="text" placeholder="Email" />
           <br />
           <input type="password" placeholder="password" />
           <br />
-          <Link to="/chat">
+          <Link to="/main">
             <button className="login__button">Login</button>
           </Link>
         </form>

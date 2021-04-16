@@ -1,0 +1,28 @@
+.chatlistitem__form {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    grid-template-columns: 15% 40% 45%;
+    background-color: #ffffff;
+    height: 15%;
+}
+
+.chatlistitem__form>.chatlistitem__image {
+    justify-self: center;
+
+    img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.chatlistitem__form>.chatlistitem__name {
+    justify-self: left;
+    margin-left: 6%;
+}
+
+.chatlistitem__form>.chatlistitem__message {
+    justify-self: right;
+    margin-right: 6%;
+    // direction: rtl;
+}
