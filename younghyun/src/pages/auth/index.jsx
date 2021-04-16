@@ -4,9 +4,21 @@ import ruinedCity from "assets/image/ruinedCity.jpg";
 import LoginTemplate from "components/auth/loginTemplate";
 import LoginForm from "components/auth/loginForm";
 
+function Login() {
+    return (
+        <Container>
+            <BackgroundImage />
+            <LoginTemplate>
+                <LoginForm />
+            </LoginTemplate>
+        </Container>
+    );
+}
+
 const Container = styled.div`
     width: 100%;
-    height: 96%;
+    height: ${window.innerHeight - 20}px;
+    max-height: 900px;
     position: relative;
     background-color: rgba(0, 0, 0, 1);
 `;
@@ -21,16 +33,5 @@ const BackgroundImage = styled.div`
     background-size: cover;
     opacity: 70%;
 `;
-
-function Login() {
-    return (
-        <Container>
-            <BackgroundImage />
-            <LoginTemplate>
-                <LoginForm />
-            </LoginTemplate>
-        </Container>
-    );
-}
 
 export default Login;

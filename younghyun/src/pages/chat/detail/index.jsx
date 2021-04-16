@@ -8,6 +8,7 @@ export default ChatDetail;
 
 const Container = styled.div`
     width: 100%;
-    height: 96%;
+    height: ${window.innerHeight - 20}px;
+    max-height: 900px;
     border: 1px solid black;
 `;
