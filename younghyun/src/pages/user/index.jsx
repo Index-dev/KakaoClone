@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 function User() {
-    return <Container>User</Container>;
+  return <Container>User</Container>;
 }
 
 export default User;
 
 const Container = styled.div`
-    width: 100%;
-    height: ${window.innerHeight - 20}px;
-    max-height: 900px;
-    border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  max-height: 900px;
 `;
