@@ -91,7 +91,11 @@
     text-align: left;
     border-radius: 10px 10px 10px 0px;
     background-color: #ffbc58;
-    padding: 3px 10px 0px 10px;
+    padding: 3px 10px 3px 10px;
+  }
+  & >.user_message_time {
+    align-self: flex-end ;
+    font-size: 10%;
   }
 }
 

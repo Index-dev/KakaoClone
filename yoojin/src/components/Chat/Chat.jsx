@@ -53,6 +53,7 @@ const Chat = () => {
           <img className="user_profile" src={user} alt="" />
           {/* <img className="user_message"src={message} alt="" /> */}
           <div className="user_message">{messages}</div>
+          <div className="user_message_time">오후 05:25</div>
           </div>
         </div>
         <div className="chat__input">
