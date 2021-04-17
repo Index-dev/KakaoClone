@@ -13,7 +13,7 @@ class Searchpage extends React.Component{
         this.state = {
           position: 0,
           input:'',
-          url: 'https://m.search.naver.com/search.naver?where=m&sm=top_hty&fbm=1&ie=utf8&query=',
+          url: '',
           show: true
         }
       }
@@ -46,10 +46,11 @@ class Searchpage extends React.Component{
     }
 
     createUrl = () => {
+        const temp = 'https://m.search.naver.com/search.naver?where=m&sm=top_hty&fbm=1&ie=utf8&query=';
         if(this.state.input.length !== 0){
             this.setState({
                 input: '',
-                url: this.state.url+this.state.input
+                url: temp+this.state.input
             }, () => {
                 this.changeWindow();
             });
