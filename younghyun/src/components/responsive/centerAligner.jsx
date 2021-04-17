@@ -5,7 +5,9 @@ const Container = styled.div`
   max-width: ${(props) => props.maxWidth};
   height: 100vh;
   max-height: 900px;
+
   position: relative;
+
   background-color: #070707;
   color: #f2f2f2;
 `;

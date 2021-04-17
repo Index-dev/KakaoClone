@@ -5,14 +5,12 @@ import Router from "components/router";
 const MAX_WIDTH = "500px";
 
 function App() {
-    return (
-        <>
-            <GlobalStyle />
-            <Aligner maxWidth={MAX_WIDTH}>
-                <Router />
-            </Aligner>
-        </>
-    );
+  return (
+    <Aligner maxWidth={MAX_WIDTH}>
+      <GlobalStyle />
+      <Router />
+    </Aligner>
+  );
 }
 
 export default App;
