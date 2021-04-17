@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Sidebar from './Sidebar';
-import MainSection from './MainSection';
+import Sidebar from './sidebar/Sidebar';
+import MainSection from './mainSection/MainSection';
 
 const KakaoMain = () => {
   return (
@@ -14,6 +14,7 @@ const KakaoMain = () => {
 
 const MainDiv = styled.div`
   display: flex;
+  position: relative;
 
   width: 500px;
   height: 650px;
