@@ -56,6 +56,7 @@ const Container = styled.div`
   color: #f7cb00;
 
   border-top: 1px solid #212121;
+  z-index: 99;
 `;
 
 const ContentContainer = styled.div`

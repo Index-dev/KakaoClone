@@ -19,11 +19,15 @@ const Container = styled.div`
   width: 100%;
   height: 20px;
 
+  position: absolute;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   background-color: rgba(254, 208, 0, 1);
+
+  z-index: 99;
 `;
 
 const Image = styled.div`
