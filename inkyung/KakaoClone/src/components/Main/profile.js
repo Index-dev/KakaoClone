@@ -72,6 +72,7 @@ const Frame = styled.div`
         "imgf"
         "bottom"
     ;
+    z-index: 20;
 `
 
 const Cancel = styled.div`
