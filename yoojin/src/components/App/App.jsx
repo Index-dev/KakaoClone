@@ -17,7 +17,7 @@ const App = () => {
           <Route path="/main" component={Main} exact={true} />
           <Route path="/main/profile" component={Profile} />
           <Route path="/chattings" component={ChatPage} exact={true} />
-          <Route path="/chattings/chat" component={Chat} />
+          <Route path="/chattings/:username" component={Chat} />
         </Switch>
       </BrowserRouter>
     </div>

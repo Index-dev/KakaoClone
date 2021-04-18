@@ -8,6 +8,7 @@
   background-color: rgb(175, 175, 175);
   font-family: "야놀자_야체_Regular";
 }
+
 .chat__frame_blur {
   position: absolute;
   z-index: 0;
@@ -17,7 +18,8 @@
   flex-flow: row-reverse;
   background-color: rgba(54, 54, 54, 0.171);
   font-family: "야놀자_야체_Regular";
-  > .div_blank {
+
+  >.div_blank {
     width: 100%;
   }
 }
@@ -40,11 +42,13 @@
     display: grid;
     grid-template-columns: 20% 80%;
     justify-items: left;
+
     // align-self: center;
     img {
       margin: 5px;
       width: 15px;
       height: 15px;
+
       &:hover {
         background-color: rgb(148, 148, 148);
         border-radius: 50px;
@@ -57,9 +61,10 @@
     grid-auto-flow: column;
     display: grid;
     justify-self: right;
+
     // display: flex;
     // flex-direction: row-reverse;
-    & > img {
+    &>img {
       width: 15px;
       height: 15px;
       margin: 5px;
@@ -71,8 +76,11 @@
   height: 80%;
   background-color: #fff0c7;
 }
+
 .chat__content_row {
   display: flex;
+  margin-top: 3%;
+
   .user_profile {
     width: 40px;
     height: 40px;
@@ -81,21 +89,29 @@
     margin: 5px;
     float: left;
   }
+
+  .user_profile_name {
+    padding-left: 15%;
+    text-align: left;
+    font-size: 90%;
+  }
+
   .user_message {
     // width: 40%;
     display: flex;
     align-items: center;
     height: 8%;
-    margin-top: 15px;
+    margin-top: 5px;
     float: left;
     text-align: left;
     border-radius: 10px 10px 10px 0px;
     background-color: #ffbc58;
-    padding: 3px 10px 3px 10px;
+    padding: 8px 10px 8px 10px;
   }
-  & >.user_message_time {
-    align-self: flex-end ;
-    font-size: 10%;
+
+  &>.user_message_time {
+    align-self: flex-end;
+    font-size: 50%;
   }
 }
 
@@ -108,12 +124,12 @@
   text-align: -webkit-center;
   background-color: bisque;
 
-  & > img {
+  &>img {
     width: 20px;
     height: 20px;
   }
 
-  & > input {
+  &>input {
     height: 100%;
     border: none;
     font-family: "야놀자_야체_Regular";

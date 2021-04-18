@@ -12,15 +12,16 @@ import hash from "../../img/sharp.png";
 import back from "../../img/arrow.png";
 import add from "../../img/add.png";
 import ChatRightBar from "./ChatRightBar";
-const Chat = () => {
+const Chat = ({ match }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [messages,setMessage] = useState("안녕하세요");
+  const [messages, setMessage] = useState("안녕하세요");
+  const [username, setUsername] = useState(match.params.username);
   const onClickRightMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  const backToChat = ()=>{
+  const backToChat = () => {
     setMenuOpen(!menuOpen);
-  }
+  };
   return (
     <div>
       <TopBar />
@@ -41,7 +42,7 @@ const Chat = () => {
             >
               <img src={back} alt="" className="chat__back" />
             </Link>
-            <div>username</div>
+            <div>{username}</div>
           </div>
           <div className="chat__topbar_right">
             <img src={search} alt="" />
@@ -50,10 +51,12 @@ const Chat = () => {
         </div>
         <div className="chat__content">
           <div className="chat__content_row">
-          <img className="user_profile" src={user} alt="" />
-          {/* <img className="user_message"src={message} alt="" /> */}
-          <div className="user_message">{messages}</div>
-          <div className="user_message_time">오후 05:25</div>
+            <img className="user_profile" src={user} alt="" />
+            <div>
+              <div className="user_profile_name">{username}</div>
+              <div className="user_message">{messages}</div>
+            </div>
+            <div className="user_message_time">오후 05:25</div>
           </div>
         </div>
         <div className="chat__input">
