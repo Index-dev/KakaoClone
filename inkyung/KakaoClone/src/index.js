@@ -2,5 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import "./index.css";
 import App from './App';
+import { Provider } from "mobx-react";
+import RootStore from "./stores";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const root = new RootStore();
+
+ReactDOM.render(
+    <Provider {...root}>
+      {}
+    <App />
+    </Provider>,
+    document.getElementById("root")
+  );
