@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import Bprofile from "../../Photos/profile.png";
 import { BsChatFill } from "react-icons/bs";
 import { ImPhone } from "react-icons/im";
 import { AiOutlineClose } from "react-icons/ai";
@@ -8,10 +7,13 @@ import { HiPencil } from "react-icons/hi";
 import { AiOutlineGift } from "react-icons/ai";
 import { TiStarOutline } from "react-icons/ti";
 import { BsPerson } from "react-icons/bs";
+import { inject, observer } from "mobx-react";
 
+@inject("friendStore")
+@observer
 class Profile extends React.Component {
-
     render(){
+        const { NAME, PImg, PMusic, PMessage, Like } = this.props.value;
         return(
             <Frame>
                 <Cancel>
@@ -21,20 +23,20 @@ class Profile extends React.Component {
                             <IOut><Change/></IOut>
                             <IOut>￦</IOut>
                             <IOut><Gift/></IOut>
-                            <IOut><Fav/></IOut>
+                            <IOutf value={Like}><Fav value={Like}/></IOutf>
                         </Icons>
                     </GridIcons>
                 </Cancel>
                 <ImgF>
                     <MDiv>
-                        <Music>작은 것들을 위한 시 - 방탄소년단 ▷</Music>
+                        <Music>{PMusic}</Music>
                     </MDiv>
                     <Area>
                         <Fphoto>
-                            <IMG src={Bprofile}></IMG>
+                            <IMG src={PImg}></IMG>
                         </Fphoto>
-                        <Fname>홍길동<EditI/></Fname>
-                        <Fmessage>부릉부릉</Fmessage>
+                        <Fname>{NAME}<EditI/></Fname>
+                        <Fmessage>{PMessage}</Fmessage>
                     </Area>
                 </ImgF>
                 <Bottom>
@@ -55,7 +57,6 @@ class Profile extends React.Component {
 const Frame = styled.div`
     min-width: 375px;
     max-width: 414px;
-    z-index: 10;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -111,6 +112,19 @@ const IOut = styled.div`
     justify-content: center; 
     padding-bottom: 1%;
     color: white;
+`
+
+const IOutf = styled.div`
+    height: 1.3em;
+    width: 1.3em;
+    border: 1px solid white;
+    border-radius: 50%;
+    background: transparent;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding-bottom: 1%;
+    border-color: ${props => props.value ? 'yellow' : 'white'};
 `
 
 const ImgF = styled.div`
@@ -233,6 +247,7 @@ export const Change = styled(BsPerson)`
 `
 export const Fav = styled(TiStarOutline)`
     font-size: large;
+    color: ${props => props.value ? 'yellow' : 'white'};
 `
 
 export default Profile;
