@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = ({ post }) => {
+const Card = ({ post, onToggle  }) => {
     const { Friend_ID, NAME, PImg, PMusic, PMessage, Like } = post;
     return(
         <Fprofile>
             <Fphoto>
-                <PButton>
+                <PButton onClick={() => onToggle(Friend_ID)}>
                 <IMG src={PImg}></IMG>
                 </PButton>
             </Fphoto>
