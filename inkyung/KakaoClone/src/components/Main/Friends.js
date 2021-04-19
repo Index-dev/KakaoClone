@@ -10,7 +10,9 @@ import LCard from "./Card/LCard";
 class Friends extends React.Component {
     state={
         showProfile: false,
-        friends: []
+        friends: [],
+        fid: '',
+        profileF: []
     };
 
     componentDidMount() {
@@ -21,15 +23,18 @@ class Friends extends React.Component {
         });
     }
 
-    toggleProfile = () => {
+    toggleProfile = (e) => {
+        const { friendStore } = this.props;
+        friendStore.getFriends(e,e+1);
         this.setState({
             showProfile: !this.state.showProfile,
+            fid: e,
+            profileF: friendStore.returnFriends[0]
         });
-        
       }
 
     render(){
-        const{friends}=this.state;
+        const{friends,profileF}=this.state;
         return(
             <Out>
             <Line></Line>
@@ -45,11 +50,12 @@ class Friends extends React.Component {
             <FTitle>친구 3</FTitle>
             <Frame>
                 {friends.map((item, index) => (
-                    <Card key={index} post={item}></Card> 
+                    <Card key={index} post={item} onToggle={this.toggleProfile}></Card> 
                 ))}
             </Frame>
+            
             {this.state.showProfile?(
-                <Profile cancelProfile={this.toggleProfile.bind(this)}/>
+                <Profile value={profileF} cancelProfile={this.toggleProfile.bind(this)}/>
             ) : null}
             </Out>
         )
