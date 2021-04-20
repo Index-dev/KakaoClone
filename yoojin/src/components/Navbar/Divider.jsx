@@ -1,6 +1,6 @@
 import React from "react";
 import "./Divider.scss";
-import down from "../../img/arrow-down.png";
+import down from "../../asset/img/arrow-down.png";
 
 const Divider = ({ dividerTitle }) => {
   return (

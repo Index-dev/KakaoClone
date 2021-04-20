@@ -1,12 +1,10 @@
 import React from "react";
 import "./ChatRightBar.scss";
-import arrowRight from "./../../img/right-arrow.png";
+import arrowRight from "./../../asset/img/right-arrow.png";
 function ChatRightBar() {
   return (
     <div className="chat__rightbar__frame">
-      <div className="menu_title">
-        채팅방 서랍
-      </div>
+      <div className="menu_title">채팅방 서랍</div>
       <div className="menu_item1">
         사진, 동영상
         <img src={arrowRight} alt="" />

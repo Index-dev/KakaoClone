@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import chatRoomImg from "../../img/conversation.png";
+import chatRoomImg from "../../asset/img/conversation.png";
 import "./ChatListItem.scss";
 const ChatListItem = () => {
   const [username, setUsername] = useState("nickname");

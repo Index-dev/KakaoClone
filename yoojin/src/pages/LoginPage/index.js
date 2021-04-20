@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Topbar from "../../components/Navbar/TopBar";
 import "./style.css";
-import logo from "../../img/chat.png";
+import logo from "../../asset/img/chat.png";
 const Login = () => {
   return (
     <div className="frame">

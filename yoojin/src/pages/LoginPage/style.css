@@ -7,21 +7,24 @@
   flex-flow: column;
   background-color: #fff241;
 }
+
 .title {
   font-size: x-large;
   font-weight: bold;
   font-family: "gabia_solmee";
 }
-.logo{
-    margin: 20px;
-    width: 130px;
-    height: 130px;
-    align-self: center;
-    background-color: rgb(255, 180, 40);
-    border: 5px solid;
-    border-radius: 100%;
+
+.logo {
+  margin: 20px;
+  width: 130px;
+  height: 130px;
+  align-self: center;
+  background-color: rgb(255, 180, 40);
+  border: 5px solid;
+  border-radius: 100%;
 }
-.login__content > form > input {
+
+.login__content>form>input {
   border: none;
   margin: 3px;
   width: 75%;
@@ -31,7 +34,7 @@
   padding-left: 10px;
 }
 
-.login__button{
+.login__button {
   margin: 10px;
   /* width: 50%; */
   width: 80%;
@@ -49,14 +52,15 @@
   /* 이름 선언 */
   font-family: "gabia_solmee";
   /* 저장한 경로 */
-  src: url("../../font/gabia_solmee.ttf");
+  src: url("../../asset/font/gabia_solmee.ttf");
 }
 
 @font-face {
   font-family: "gabia_bombaram";
-  src: url("../../font/gabia_bombaram.ttf");
+  src: url("../../asset/font/gabia_bombaram.ttf");
 }
+
 @font-face {
   font-family: "야놀자_야체_Regular";
-  src: url("../../font/야놀자_야체_Regular.ttf");
+  src: url("../../asset/font/야놀자_야체_Regular.ttf");
 }
