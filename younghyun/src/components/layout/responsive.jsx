@@ -10,6 +10,7 @@ const Container = styled.div`
 
   background-color: #070707;
   color: #f2f2f2;
+  scrollbar-width: none;
 `;
 
 function CenterAligner({ children, maxWidth }) {

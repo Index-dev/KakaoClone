@@ -1,4 +1,4 @@
-import Aligner from "components/responsive/centerAligner";
+import Aligner from "components/layout/responsive";
 import GlobalStyle from "components/globalStyles";
 import Router from "components/router";
 

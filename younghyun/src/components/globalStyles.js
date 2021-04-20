@@ -4,6 +4,7 @@ import reset from "styled-reset";
 const GlobalStyle = createGlobalStyle`
     ${reset}
     body {
+        height: 100vh;
         display: flex;
         justify-content:center;
         align-items:center;
@@ -13,12 +14,6 @@ const GlobalStyle = createGlobalStyle`
         color: #070707;
         
         margin: 0;
-
-        -ms-overflow-style: none;
-        &::-webkit-scrollbar {
-            display: none;
-        }
-
     }
     
 `;

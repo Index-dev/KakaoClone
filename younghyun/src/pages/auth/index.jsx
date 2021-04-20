@@ -21,6 +21,7 @@ const Container = styled.div`
   max-height: 900px;
   position: relative;
   background-color: rgba(0, 0, 0, 1);
+  /* padding-top: 20px; */
 `;
 
 const BackgroundImage = styled.div`
