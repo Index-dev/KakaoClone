@@ -40,11 +40,11 @@ const Chat = ({ match }) => {
               to="/chattings"
               style={{ textDecoration: "none", color: "black" }}
             >
-              <div className="chat__topbar_right_div">
+              <div className="chat__topbar_left_div">
                 <img src={back} alt="" className="chat__back" />
               </div>
             </Link>
-            <div>{username}</div>
+            <div className="chat__topbar_username">{username}</div>
           </div>
           <div className="chat__topbar_right">
             <img src={search} alt="" />

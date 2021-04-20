@@ -40,9 +40,10 @@
     display: grid;
     grid-template-columns: 20% 80%;
     justify-items: left;
-    margin: 5px;
 
-    .chat__topbar_right_div {
+    .chat__topbar_left_div {
+      margin-left: 5px;
+
       &:hover {
         background-color: rgb(148, 148, 148);
         border-radius: 50px;
@@ -62,8 +63,6 @@
     display: grid;
     justify-self: right;
 
-    // display: flex;
-    // flex-direction: row-reverse;
     &>img {
       width: 15px;
       height: 15px;
