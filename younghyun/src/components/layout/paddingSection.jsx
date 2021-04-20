@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  max-width: 500px;
+  height: 100vh;
+  max-height: 900px;
 
-  padding: 20px 0 50px 0;
+  overflow: auto;
+
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 function PaddingContainer({ children }) {

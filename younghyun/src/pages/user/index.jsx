@@ -200,8 +200,4 @@ const Container = styled.div`
 
 const Component = styled.div`
   overflow: auto;
-  -ms-overflow-style: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
 `;
