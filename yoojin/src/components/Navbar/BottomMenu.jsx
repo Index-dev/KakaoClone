@@ -16,7 +16,7 @@ const BottomMenu = () => {
       <Link to="/chattings">
         <img className="bottom__item" src={chat} alt="" />
       </Link>
-      <Link to="/chattings">
+      <Link to="/channel">
         <img className="bottom__item" src={channel} alt="" />
       </Link>
       <Link to="/chattings">

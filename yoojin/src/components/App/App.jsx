@@ -6,6 +6,7 @@ import ChatPage from "../../pages/ChatPage";
 import Topbar from "../Navbar/TopBar";
 import Profile from "../../pages/ProfilePage";
 import Chat from "../Chat/Chat";
+import ChannelPage from "../../pages/ChannelPage";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/main/profile" component={Profile} />
           <Route path="/chattings" component={ChatPage} exact={true} />
           <Route path="/chattings/:username" component={Chat} />
+          <Route path="/channel" component={ChannelPage} exact={true} />
         </Switch>
       </BrowserRouter>
     </div>
