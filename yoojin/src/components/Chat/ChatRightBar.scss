@@ -1,0 +1,45 @@
+.chat__rightbar__frame {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  background-color: #fff6a3;
+  width: 45%;
+  & > .menu_title {
+    display: flex;
+    font-weight: bold;
+    height: 8%;
+    justify-content: left;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    & > img {
+      height: 10px;
+      width: 10px;
+    }
+  }
+  & > .menu_item1 {
+    display: flex;
+    height: 5%;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    & > img {
+      height: 10px;
+      width: 10px;
+    }
+  }
+  & > .menu_item2 {
+    display: flex;
+    font-weight: bold;
+    height: 5%;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    & > img {
+      height: 10px;
+      width: 10px;
+    }
+  }
+}

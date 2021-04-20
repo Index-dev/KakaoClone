@@ -13,16 +13,16 @@ const BottomMenu = () => {
       <Link to="/main">
         <img className="bottom__item" src={users} alt="" />
       </Link>
-      <Link to="/chat">
+      <Link to="/chattings">
         <img className="bottom__item" src={chat} alt="" />
       </Link>
-      <Link to="/chat">
+      <Link to="/chattings">
         <img className="bottom__item" src={channel} alt="" />
       </Link>
-      <Link to="/chat">
+      <Link to="/chattings">
         <img className="bottom__item" src={shopping} alt="" />
       </Link>
-      <Link to="/chat">
+      <Link to="/chattings">
         <img className="bottom__item" src={etc} alt="" />
       </Link>
     </div>
