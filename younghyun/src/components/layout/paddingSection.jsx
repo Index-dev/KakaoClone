@@ -1,6 +1,18 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+function PaddingContainer({ children }) {
+  return (
+    <HeaderNavSection>
+      <Container>
+        <Component>{children}</Component>
+      </Container>
+    </HeaderNavSection>
+  );
+}
+
+export default PaddingContainer;
+
+const HeaderNavSection = styled.div`
   width: 100vw;
   max-width: 500px;
   height: 100vh;
@@ -13,9 +25,14 @@ const Container = styled.div`
     display: none;
   }
 `;
+const Container = styled.div`
+  padding: 20px 0 50px 0;
+`;
 
-function PaddingContainer({ children }) {
-  return <Container>{children}</Container>;
-}
-
-export default PaddingContainer;
+const Component = styled.div`
+  overflow: auto;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
