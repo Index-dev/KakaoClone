@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import FriendList from './friendList/FriendList';
 import ChattingList from './chattingList/ChattingList';
@@ -7,8 +8,11 @@ import ChattingList from './chattingList/ChattingList';
 const MainSection = () => {
   return (
     <Section>
-      <FriendList />
-      {false && <ChattingList />}
+      <Switch>
+        <Redirect from="/" to="/friend" exact />
+        <Route path="/friend" component={FriendList} />
+        <Route path="/chatting" component={ChattingList} />
+      </Switch>
     </Section>
   );
 };

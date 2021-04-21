@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { observer } from 'mobx-react';
+import { useHistory, useLocation } from 'react-router-dom';
+import useStores from '../../hooks/useStores';
+
 import PersonIcon from '@material-ui/icons/Person';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SettingsIcon from '@material-ui/icons/Settings';
 
-const Sidebar = () => {
+const Sidebar = observer(() => {
+  const { commonStore } = useStores();
+  const history = useHistory();
+  const location = useLocation();
+
+  const [pathname, setPathname] = useState('');
+
+  useEffect(() => {
+    setPathname(location.pathname.split('/')[1]);
+  }, [location.pathname]);
+
+  const changeView = (route: string) => {
+    commonStore.setCurrentRoute(route);
+    if (route === 'friend') history.push('/friend');
+    else if (route === 'chatting') history.push('/chatting');
+    else if (route === 'more') history.push('/more');
+  };
+
   return (
     <Aside>
       <ControlBtns>
@@ -18,15 +39,30 @@ const Sidebar = () => {
       <OtherBtns>
         <MenuBtns>
           <MenuBtn>
-            <PersonIcon style={{ color: '#fff' }} />
+            <PersonIcon
+              style={
+                pathname === 'friend' ? { color: '#fff' } : { color: '#999' }
+              }
+              onClick={() => changeView('friend')}
+            />
           </MenuBtn>
 
           <MenuBtn>
-            <ChatBubbleIcon />
+            <ChatBubbleIcon
+              style={
+                pathname === 'chatting' ? { color: '#fff' } : { color: '#999' }
+              }
+              onClick={() => changeView('chatting')}
+            />
           </MenuBtn>
 
           <MenuBtn>
-            <MoreHorizIcon />
+            <MoreHorizIcon
+              style={
+                pathname === 'more' ? { color: '#fff' } : { color: '#999' }
+              }
+              onClick={() => changeView('more')}
+            />
           </MenuBtn>
         </MenuBtns>
 
@@ -42,7 +78,7 @@ const Sidebar = () => {
       </OtherBtns>
     </Aside>
   );
-};
+});
 
 const Aside = styled.aside`
   width: 60px;

@@ -1,21 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import usersData from '../../../data/users';
 
 import SearchIcon from '@material-ui/icons/Search';
 
 const ChattingList = () => {
+  const [users, setUsers] = useState(usersData);
+
+  const handleQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const query = e.target.value;
+    setUsers(usersData.filter(user => user.name.includes(query)));
+
+    if (e.target.value.length === 0) {
+      setUsers(usersData);
+    }
+  };
+
   return (
-    <MainSection>
-      <SearchBar>
+    <FriendListSection>
+      <FriendListTitle>채팅</FriendListTitle>
+      <FriendListSearchBar>
         <SearchIcon />
-      </SearchBar>
-    </MainSection>
+        <input
+          type="text"
+          placeholder="이름으로 검색"
+          onChange={handleQueryChange}
+        ></input>
+      </FriendListSearchBar>
+      <FriendListBody>
+        <MyProfile>
+          <TitleText>내 기본프로필</TitleText>
+        </MyProfile>
+
+        <Friends>
+          <TitleText style={{ marginTop: '10px' }}>
+            친구 {users.length}
+          </TitleText>
+        </Friends>
+      </FriendListBody>
+    </FriendListSection>
   );
 };
 
-const MainSection = styled.section``;
+const FriendListSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 
-const SearchBar = styled.div`
+  border-radius: 0 12px 12px 0;
+`;
+
+const FriendListTitle = styled.article`
+  align-self: flex-start;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 14px;
+`;
+
+const FriendListSearchBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,4 +83,34 @@ const SearchBar = styled.div`
     font-size: 0.8rem;
   }
 `;
+
+const FriendListBody = styled.section`
+  margin-top: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+
+  width: 95%;
+`;
+
+const MyProfile = styled.article`
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+`;
+
+const TitleText = styled.div`
+  color: #888;
+  font-size: 0.8rem;
+`;
+
+const Friends = styled.article``;
+
+const FriendsList = styled.div``;
+
 export default ChattingList;

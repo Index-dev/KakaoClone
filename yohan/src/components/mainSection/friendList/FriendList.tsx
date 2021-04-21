@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import usersData from '../../../data/users';
 
 import Friend from './friend/Friend';
 
 import SearchIcon from '@material-ui/icons/Search';
 
 const FriendList = () => {
+  const [users, setUsers] = useState(usersData);
+
+  const handleQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const query = e.target.value;
+    setUsers(usersData.filter(user => user.name.includes(query)));
+
+    if (e.target.value.length === 0) {
+      setUsers(usersData);
+    }
+  };
+
   return (
     <FriendListSection>
       <FriendListTitle>친구</FriendListTitle>
       <FriendListSearchBar>
         <SearchIcon />
-        <input type="text" placeholder="이름으로 검색"></input>
+        <input
+          type="text"
+          placeholder="이름으로 검색"
+          onChange={handleQueryChange}
+        ></input>
       </FriendListSearchBar>
       <FriendListBody>
         <MyProfile>
@@ -20,14 +36,12 @@ const FriendList = () => {
         </MyProfile>
 
         <Friends>
-          <TitleText style={{ marginTop: '10px' }}>친구 7</TitleText>
-          <Friend name="철수" status="힘들다" />
-          <Friend name="영희" status="화이팅 !" />
-          <Friend name="짱구" status="안녕하세요" />
-          <Friend name="가나" status="아프리카?" />
-          <Friend name="다라" status="아이고" />
-          <Friend name="마바" status="주말좋아" />
-          <Friend name="사자" status="어흥" />
+          <TitleText style={{ marginTop: '10px' }}>
+            친구 {users.length}
+          </TitleText>
+          {users.map(user => (
+            <Friend name={user.name} status={user.intro} key={user.uid} />
+          ))}
         </Friends>
       </FriendListBody>
     </FriendListSection>
@@ -77,9 +91,14 @@ const FriendListSearchBar = styled.div`
 `;
 
 const FriendListBody = styled.section`
-  margin-top: 30px;
+  margin-top: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
   display: flex;
   flex-direction: column;
+  height: 100%;
+  overflow: auto;
 
   width: 95%;
 `;
