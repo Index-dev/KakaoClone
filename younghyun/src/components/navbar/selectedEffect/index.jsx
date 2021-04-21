@@ -10,6 +10,8 @@ function SelectedEffect() {
     ctx.width = canvas.offsetWidth;
     ctx.height = canvas.offsetHeight;
 
+    ctx.scale(1.5, 1.5);
+
     class Circle {
       constructor(x, y, dx, dy, radius) {
         this.x = x;
