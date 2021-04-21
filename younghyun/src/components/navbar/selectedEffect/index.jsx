@@ -20,7 +20,7 @@ function SelectedEffect() {
         this.dy = dy;
         this.radius = radius;
 
-        let colorArray = ["#663300", "#ff8000", "#ffff00"];
+        let colorArray = ["#663300", "#ff8000", "#ffff00", "#cc3300"];
 
         this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
       }
@@ -37,14 +37,14 @@ function SelectedEffect() {
 
       update = () => {
         if (
-          this.x + this.radius / 2 >= canvas.offsetWidth ||
-          this.x - this.radius / 2 <= 0
+          this.x + this.radius >= canvas.offsetWidth ||
+          this.x - this.radius <= 0
         ) {
           this.dx = -this.dx;
         }
         if (
-          this.y + this.radius / 2 >= canvas.offsetHeight ||
-          this.y - this.radius / 2 <= 0
+          this.y + this.radius >= canvas.offsetHeight ||
+          this.y - this.radius <= 0
         ) {
           this.dy = -this.dy;
         }
@@ -56,11 +56,11 @@ function SelectedEffect() {
     let circleArray = [];
 
     for (let i = 0; i < 80; i++) {
-      let radius = Math.random() * 10 + 4;
+      let radius = Math.random() * 7 + 4;
       let x = Math.random() * canvas.offsetWidth;
-      let dx = (Math.random() - 0.2) * 1;
+      let dx = Math.random() - 0.2;
       let y = Math.random() * canvas.offsetHeight;
-      let dy = (Math.random() - 0.2) * 1;
+      let dy = Math.random() - 0.2;
       circleArray.push(new Circle(x, y, dx, dy, radius));
     }
     function animate() {

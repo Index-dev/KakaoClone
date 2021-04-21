@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+function CenterAligner({ children, maxWidth }) {
+  return <Container maxWidth={maxWidth}>{children}</Container>;
+}
+
+export default CenterAligner;
+
 const Container = styled.div`
   width: 100vw;
   max-width: ${(props) => props.maxWidth};
@@ -9,12 +15,6 @@ const Container = styled.div`
   position: relative;
 
   background-color: #070707;
-  color: #f2f2f2;
+  color: #f7cb00;
   scrollbar-width: none;
 `;
-
-function CenterAligner({ children, maxWidth }) {
-  return <Container maxWidth={maxWidth}>{children}</Container>;
-}
-
-export default CenterAligner;
