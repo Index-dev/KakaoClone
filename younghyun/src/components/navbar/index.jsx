@@ -1,5 +1,7 @@
 import { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+import SelectedEffect from "components/navbar/selectedEffect";
 
 function NavBar() {
   const [selectedContent] = useState(getSelectedContent);
@@ -10,25 +12,29 @@ function NavBar() {
         selected={selectedContent === "user"}
         onClick={() => linkTo("user")}
       >
-        user
+        <TextContainer>user</TextContainer>
+        {selectedContent === "user" && <SelectedEffect />}
       </ContentContainer>
       <ContentContainer
         selected={selectedContent === "chat"}
         onClick={() => linkTo("chat")}
       >
-        chat
+        {selectedContent === "chat" && <SelectedEffect />}
+        <TextContainer>chat</TextContainer>
       </ContentContainer>
       <ContentContainer
         selected={selectedContent === "issue"}
         onClick={() => linkTo("issue")}
       >
-        issue
+        {selectedContent === "issue" && <SelectedEffect />}
+        <TextContainer>issue</TextContainer>
       </ContentContainer>
       <ContentContainer
         selected={selectedContent === "setting"}
         onClick={() => linkTo("setting")}
       >
-        setting
+        {selectedContent === "setting" && <SelectedEffect />}
+        <TextContainer>setting</TextContainer>
       </ContentContainer>
     </Container>
   );
@@ -60,11 +66,24 @@ const Container = styled.div`
 `;
 
 const ContentContainer = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.selected && "#f7cb00"};
-  color: ${(props) => props.selected && "black"};
   transition: background-color 0.2s, color 0.2s;
   cursor: pointer;
+
+  overflow: hidden;
+  ${(props) =>
+    props.selected &&
+    css`
+      position: relative;
+      background: linear-gradient(-135deg, #f7cb00, #5c5f00);
+      color: black;
+      z-index: 1;
+    `}
+`;
+
+const TextContainer = styled.h2`
+  z-index: 1;
 `;
