@@ -3,8 +3,13 @@ import HeaderNavSection from "components/layout/paddingSection";
 import InfoContainer from "components/user/Info";
 import jay_Z from "assets/image/jayZLogo.png";
 import ryan from "assets/image/ryan.jpg";
+import apeach from "assets/image/apeach.jpg";
+import bumsu from "assets/image/bumsu.jpg";
+import elonMusk from "assets/image/elonMusk.jpg";
+import christopher from "assets/image/christopher.png";
 import seulgi from "assets/image/seulgi.jpg";
 import jin from "assets/image/jin.jpg";
+import unknown from "assets/image/unknown.png";
 
 function User() {
     return (
@@ -12,35 +17,41 @@ function User() {
             <Container>
                 <Title>친구</Title>
                 <InfoContainer
-                    name="JAY_Z"
+                    name="제이지"
                     statusText="헤헿"
                     image={jay_Z}
                     themeSong="Empire State Of Mind - jay_Z"
                 />
                 <LineDevider />
                 <InfoContainer
-                    name="Ryan"
+                    name="재수없는 라이언"
                     statusText="교만X 자만X 겸손"
                     image={ryan}
                     themeSong=""
                 />
                 <InfoContainer
-                    name="Ryan"
-                    statusText="교만X 자만X 겸손"
-                    image={ryan}
+                    name="우리 피치"
+                    statusText="술이 달다"
+                    image={apeach}
+                    themeSong="지친하루 (With 곽진언, 김필) - 윤종신"
+                />
+                <InfoContainer
+                    name="범수형"
+                    statusText="카카오 의장 김범수 입니다"
+                    image={bumsu}
                     themeSong=""
                 />
                 <InfoContainer
-                    name="Ryan"
-                    statusText="교만X 자만X 겸손"
-                    image={ryan}
+                    name="머스크 형"
+                    statusText="안냐세여~~ 일론 머스큽니다"
+                    image={elonMusk}
                     themeSong=""
                 />
                 <InfoContainer
-                    name="Ryan"
-                    statusText="교만X 자만X 겸손"
-                    image={ryan}
-                    themeSong=""
+                    name="Christopher"
+                    statusText=""
+                    image={christopher}
+                    themeSong="Just So You Know - christopher"
                 />
                 <InfoContainer
                     name="슬기"
@@ -53,6 +64,24 @@ function User() {
                     statusText=""
                     image={jin}
                     themeSong="쩔어 (Dope) - 방탄소년단"
+                />
+                <InfoContainer
+                    name="친구"
+                    statusText=""
+                    image={unknown}
+                    themeSong=""
+                />
+                <InfoContainer
+                    name="친구"
+                    statusText=""
+                    image={unknown}
+                    themeSong=""
+                />
+                <InfoContainer
+                    name="친구"
+                    statusText=""
+                    image={unknown}
+                    themeSong=""
                 />
             </Container>
         </HeaderNavSection>
