@@ -1,20 +1,22 @@
 .channel__top {
     display: grid;
     grid-template-columns: 85% 15%;
+    height: 10%;
+    align-content: center;
 
-    &>ul {
+    & .channel__menu {
         display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
-        list-style: none;
 
-        &>li {
+        &>div {
             flex: 0 0 auto;
-            margin: 0px 10px 0px 0px;
+            margin: 0px 5px 0px 5px;
+            height: 100%;
         }
 
         &::-webkit-scrollbar {
-            height: 10px;
+            height: 4px;
         }
 
         &::-webkit-scrollbar-thumb {
@@ -23,7 +25,7 @@
         }
 
         &::-webkit-scrollbar-track {
-            background-color: grey;
+            background-color: rgb(223, 223, 223);
         }
     }
 }
