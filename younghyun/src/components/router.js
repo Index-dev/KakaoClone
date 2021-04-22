@@ -7,7 +7,7 @@ import {
 import Status from "components/status";
 import NavBar from "components/navbar";
 import login from "pages/auth";
-import user from "pages/user";
+import user from "pages/user/userContainer";
 import chatList from "pages/chat/list";
 import chatDetail from "pages/chat/detail";
 import issue from "pages/issue";
