@@ -6,7 +6,7 @@ function InfoContainer(props) {
   const AvartarSizeRate = props.name === "JAY_Z" ? "15" : "12";
 
   return (
-    <Container>
+    <Container onClick={props.onClick}>
       <AvartarContainer width={AvartarSizeRate}>
         <Avartar image={props.image} />
       </AvartarContainer>

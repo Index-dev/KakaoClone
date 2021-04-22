@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import HeaderNavSection from "components/layout/paddingSection";
 import InfoContainer from "components/user";
-import Profile from "pages/profile";
+import Profile from "pages/profile/animation";
 
 import jay_Z from "assets/image/jayZLogo.png";
 import ryan from "assets/image/ryan.jpg";
@@ -16,7 +16,7 @@ import unknown from "assets/image/unknown.png";
 function User(props) {
   return (
     <HeaderNavSection>
-      {props.firsTimeLoad && <Profile show={props.showProfile} />}
+      {props.dontShowLoad && <Profile showProfile={props.showProfile} />}
       <Container>
         <Title>친구</Title>
         <InfoContainer

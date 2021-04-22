@@ -1,21 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import UserPresenter from "pages/user/userPresenter";
 
 function UserContainer() {
   const [showProfile, setShowProfile] = useState(false);
-  const [firtTimeLoad, setFirstTimeLoad] = useState(false);
-  useEffect(() => {
-    setFirstTimeLoad(true);
-  }, []);
+  const [dontShowLoad, setDontShowLoad] = useState(false);
+
   const handleShowProfile = (event) => {
     event.preventDefault();
     setShowProfile(true);
-    console.log(showProfile, firtTimeLoad);
+    setDontShowLoad(true);
   };
   return (
     <UserPresenter
-      firtTimeLoad={firtTimeLoad}
       showProfile={showProfile}
+      dontShowLoad={dontShowLoad}
       handleShowProfile={handleShowProfile}
     />
   );
