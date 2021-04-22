@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 function InfoContainer(props) {
-    const AvartarSizeRate = props.name === "JAY_Z" ? "10" : "8";
+    const AvartarSizeRate = props.name === "JAY_Z" ? "15" : "8";
 
     return (
         <Container width={AvartarSizeRate}>
