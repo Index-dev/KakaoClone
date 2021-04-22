@@ -1,40 +1,74 @@
 import React from "react";
 import styled from "styled-components";
-import F1 from "../../Photos/F1.png";
-import F3 from "../../Photos/F3.png";
+import { inject, observer } from "mobx-react";
+import Card from "./Card/index";
+import Contents from "./Contents/index";
 
+@inject("chatStore", "friendStore")
+@observer
 class Info extends React.Component{
+    state={
+        showChat: false,
+        friends: [],
+        chats: [],
+        chatsContent: [],
+        new: []
+    };
+
+    componentDidMount() {
+        const { chatStore, friendStore} = this.props;
+        friendStore.getFriends(0,3);
+        chatStore.getChats(0,2);
+        this.setState({
+            friends: friendStore.returnFriends
+        });
+        let Clength = chatStore.length;
+        let Flength = friendStore.length;
+        friendStore.concatReset();
+       for(let i=0;i<Flength;i++){
+        for(let j=0;j<Clength;j++){
+            if(chatStore.returnChats[j].Friend_ID === friendStore.returnFriends[i].Friend_ID) {
+              friendStore.concatItems(chatStore.returnChats[j], friendStore.returnFriends[i]);   
+            }
+        }    
+       }
+       this.setState({
+            chats: friendStore.combines
+        });
+    }
+
+    toggleChatting = (e) => {
+        const { friendStore } = this.props;
+        friendStore.getOne(e,friendStore.combines);
+        this.setState({
+            showChat: !this.state.showChat,
+            chatsContent: friendStore.returnFriendInfo
+        });
+        
+      }
+
     render(){
+        const{chats, chatsContent} = this.state;
         return(
+            <Out>
             <Frame>
-                <ChatF>
-                    <Fphoto>
-                        <IMG src={F3}/>
-                    </Fphoto>
-                    <CInfo>
-                        <Fname>친구3</Fname>
-                        <Content>이거슨 내용이다.</Content>
-                    </CInfo>
-                    <Time>
-                        <TC>오후 1:17</TC>
-                    </Time>
-                </ChatF>
-                <ChatF>
-                    <Fphoto>
-                        <IMG src={F1}/>
-                    </Fphoto>
-                    <CInfo>
-                        <Fname>친구1</Fname>
-                        <Content>테스트용 내용이다.</Content>
-                    </CInfo>
-                    <Time>
-                        <TC>오전 9:32</TC>
-                    </Time>
-                </ChatF>
+                {chats.map((item, index) => (
+                        <Card key={index} post={item}onToggle={this.toggleChatting}></Card> 
+                    ))}
             </Frame>
+            
+            {this.state.showChat?(
+                <div>{chatsContent.map((item, index) => (
+                    <Contents key={index} post={item} cancelChat={this.toggleChatting.bind(this)}/>
+                ))}</div>
+                
+            ) : null}
+            </Out>
         )
     }
 }
+
+const Out = styled.div``
 
 const Frame = styled.div`
     display: grid;
@@ -42,62 +76,13 @@ const Frame = styled.div`
     overflow: auto;
 `
 
-const ChatF = styled.div`
+const B = styled.button`
     height: 60px;
-    display: grid; 
-    padding-left: 5%;
-    grid-template-columns: 15% 50% 30%;
-    grid-template-areas: "img info time";
-    &:hover {
-        cursor: pointer;
-        background-color: #dbdbdb;
-    }
+    border: none;
+    background: transparent;
+    width: 100vw;
 `
 
-const Fphoto = styled.div`
-    grid-area: img;
-    display: flex; 
-    align-items: center;
-`
-
-const IMG = styled.img`
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 2.5em;
-    height: 2.5em;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 1px solid gray;
-`
-const CInfo = styled.div`
-    grid-area: info;
-    display: inline;
-    padding-left: 5%;
-    display: flex; 
-    align-items: center; 
-    justify-content: left; 
-    display: inline;
-    padding-top: 3%;
-`
-
-const Fname = styled.div``
-
-const Content = styled.div`
-    color: lightslategray;
-    font-size: medium;
-`
-
-const Time = styled.div`
-   grid-area: time;
-   text-align: right;
-   padding-top: 10%;
-`
-
-const TC = styled.div`
-    font-size: small;
-    color: lightgray;
-`
 
 export default Info;
 

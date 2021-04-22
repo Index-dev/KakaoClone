@@ -1,23 +1,31 @@
 import React from 'react';
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
-import {FcMusic, FcAdvertising, FcServices, FcSearch} from "react-icons/fc";
+import NavBG from '../../Photos/NavBG.png'
+import Nav1 from '../../Photos/Nav1.png'
+import Nav2 from '../../Photos/Nav2.png'
+import Nav3 from '../../Photos/Nav3.png'
+import Nav4 from '../../Photos/Nav4.png'
+import Nav5 from '../../Photos/Nav5.png'
 
 class Nav extends React.Component {
     render(){
         return(
             <Frame>
                 <Home>
-                    <Link to={"/main"} style={{ textDecoration: "none" }}><Hicon></Hicon></Link>
+                <Link to={"/main"} style={{ textDecoration: "none" }}><Icon src={Nav1}/></Link>
                 </Home>
                 <Talk>
-                    <Link to={"/chatting"} style={{ textDecoration: "none" }}><Ticon></Ticon></Link>
+                <Link to={"/chatting"} style={{ textDecoration: "none" }}><Icon src={Nav2}/></Link>
                 </Talk>
+                <News>
+                <Link to={"/search"} style={{ textDecoration: "none" }}><Icon src={Nav3}/></Link>
+                </News>
                 <Search>
-                    <Link to={"/search"} style={{ textDecoration: "none" }}><Scicon></Scicon></Link>
+                <Link to={"/shopping"} style={{ textDecoration: "none" }}><Icon src={Nav4}/></Link>
                 </Search>
                 <Setting>
-                    <Link to={"/setting"} style={{ textDecoration: "none" }}><Sicon></Sicon></Link>
+                <Link to={"/setting"} style={{ textDecoration: "none" }}><Icon src={Nav5}/></Link>
                 </Setting>
             </Frame>
         )
@@ -25,11 +33,15 @@ class Nav extends React.Component {
 }
 
 const Frame = styled.div`
-    background-color: #ffe6e6;
+    background: url(${NavBG});
+    background-repeat: no-repeat;
+    background-size: cover;
     grid-area: nav;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "home talk search setting";
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "home talk news search setting";
+    padding-top: 5%;
+    z-index: 10;
 `
 
 const Home = styled.div`
@@ -39,9 +51,6 @@ const Home = styled.div`
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    &:hover{
-        background-color: white;
-    }
 `;
 
 const Talk = styled.div`
@@ -51,10 +60,18 @@ const Talk = styled.div`
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    &:hover{
-        background-color: white;
-    }
+
 `;
+
+const News = styled.div`
+    grid-area: news;
+    align-items: center; 
+    justify-content: center; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+
+`
 
 const Search = styled.div`
     grid-area: search;
@@ -63,9 +80,7 @@ const Search = styled.div`
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    &:hover{
-        background-color: white;
-    }
+
 `;
 
 
@@ -76,34 +91,12 @@ const Setting = styled.div`
     display: flex; 
     align-items: center; 
     justify-content: center;
-    &:hover{
-        background-color: white;
-    }
+
 `;
 
-export const Hicon = styled(FcMusic)`
-    font-size: xxx-large;
-    &:hover{
-        background-color: white;
-    }
-`
-export const Ticon = styled(FcAdvertising)`
-    font-size: xxx-large;
-    &:hover{
-        background-color: white;
-    }
-`
-export const Sicon = styled(FcServices)`
-    font-size: xxx-large;
-    &:hover{
-        background-color: white;
-    }
-`
-export const Scicon = styled(FcSearch)`
-    font-size: xxx-large;
-    &:hover{
-        background-color: white;
-    }
+const Icon = styled.img`
+    width: 2.5em;
+    height: 2.5em;
 `
 
 export default Nav;

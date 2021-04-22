@@ -1,144 +1,101 @@
 import React from 'react';
 import styled from "styled-components";
 import Profile from "../Main/profile";
-import F1 from "../../Photos/F1.png";
-import F2 from "../../Photos/F2.png";
-import F3 from "../../Photos/F3.png";
+import { inject, observer } from "mobx-react";
+import Card from "./Card/index";
+import LCard from "./Card/LCard";
 
+@inject("friendStore")
+@observer
 class Friends extends React.Component {
     state={
-        showProfile: false
+        showProfile: false,
+        friends: [],
+        fid: '',
+        profileF: []
+    };
+
+    componentDidMount() {
+        const { friendStore } = this.props;
+        friendStore.getFriends(0,3);
+        this.setState({
+            friends: friendStore.returnFriends
+        });
     }
 
-    toggleProfile() {
-        console.log(this.state.showProfile)
+    toggleProfile = (e) => {
+        const { friendStore } = this.props;
+        friendStore.getOne(e,friendStore.returnFriends);
         this.setState({
             showProfile: !this.state.showProfile,
+            fid: e,
+            profileF: friendStore.returnFriendInfo
         });
       }
 
     render(){
+        const{friends,profileF}=this.state;
         return(
-            <div>
+            <Out>
+            <Line></Line>
+            <FavFrame>
+                <FTitle>즐겨찾기</FTitle>
+                <FList>
+                    {friends.map((item, index) => (
+                        <LCard key={index} post={item} onToggle={this.toggleProfile}></LCard> 
+                    ))}
+                </FList>
+            </FavFrame>
+            <Line></Line>
+            <FTitle>친구 3</FTitle>
             <Frame>
-                <Fprofile>
-                    <Fphoto>
-                        <IMG src={F1}></IMG>
-                    </Fphoto>
-                    <Fname>친구1</Fname>
-                    <MDiv>
-                        <Balloon>
-                            <Fmessage>메세지1~</Fmessage>
-                        </Balloon>
-                   </MDiv>
-                </Fprofile>
-                <Fprofile>
-                    <Fphoto>
-                        <IMG src={F2}></IMG>
-                    </Fphoto>
-                    <Fname>친구2</Fname>
-                    <MDiv>
-                        <Balloon>
-                            <Fmessage>메세지2~</Fmessage>
-                        </Balloon>
-                   </MDiv>
-                </Fprofile>
-                <Fprofile>
-                    <Fphoto>
-                        <IMG src={F3}></IMG>
-                    </Fphoto>
-                    <Fname>친구3</Fname>
-                   <MDiv>
-                        <Balloon>
-                            <Fmessage>메세지3~</Fmessage>
-                        </Balloon>
-                   </MDiv>
-                </Fprofile>
+                {friends.map((item, index) => (
+                    <Card key={index} post={item} onToggle={this.toggleProfile}></Card> 
+                ))}
             </Frame>
+            
             {this.state.showProfile?(
-                <Profile cancelProfile={this.toggleProfile.bind(this)}/>
+             <div>   {profileF.map((item, index) => (
+                    <Profile key={index} post={item} cancelProfile={this.toggleProfile.bind(this)}/>
+                ))}</div>
+                
             ) : null}
-            </div>
+            </Out>
         )
     }
 }
 
-const Frame = styled.div`
+const Out = styled.div`
     grid-area: friendlist;
+    padding-right: 3%;
+`
+
+const FavFrame = styled.div`
+
+`
+
+const FTitle = styled.div`
+    font-weight: 100;
+`
+
+const FList = styled.div`
     display: grid;
-    padding-top: 5%;
-    grid-template-rows: repeat(auto-fill, minmax(60px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
     overflow: auto;
 `
 
-const Fprofile = styled.div`
-    height: 60px;
-    display: grid; 
-    grid-template-columns: 18% 27% 50%;
-    grid-template-areas: "img name msg";
-    &:hover {
-        cursor: pointer;
-        background-color: #dbdbdb;
-    }
+const Frame = styled.div`
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+    overflow: auto;
 `
 
-const Fphoto = styled.div`
-    grid-area: img;
-    display: flex; 
-    align-items: center;
-`
-
-const IMG = styled.img`
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 3em;
-    height: 3em;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 1px solid gray;
-`
-
-const Fname = styled.div`   
-    padding-left: 10%;
-    grid-area: name;
-    display: flex; 
-    align-items: center; 
-`
-
-const MDiv = styled.div`
-    grid-area: msg;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-`
-
-const Fmessage = styled.div`
-    display: flex; 
-    align-items: center; 
-    justify-content: center;  
-`
-
-const Balloon = styled.div`
-    position: relative;
-    width: 100%; 
-    height: 70%;
-    background: #ffe6e6; 
-    border-radius: 10px;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;  
-
-    &:after{
-        border-top: 10px solid #ffe6e6; 
-        border-left: 10px solid transparent; 
-        border-right: 10px solid transparent; 
-        border-bottom: 0px solid transparent; 
-        content:""; 
-        position:absolute;
-        bottom:-10px;
-        left: 30px;  
-    }
+const Line = styled.hr`
+    border:none;
+    width: 98%;
+    height: 1px;
+    background-color: lightgray;
+    margin-left: 0;
 `
 
 export default Friends;

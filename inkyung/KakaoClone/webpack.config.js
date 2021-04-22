@@ -1,10 +1,15 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   entry: {
     main: './src/index.js'
+  },
+  node: {
+    fs: 'empty',
+    net: 'empty'
   },
   resolve: {
     extensions: ['.js', '.jsx', '.css']
@@ -25,7 +30,8 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: '/node_modules/',
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        query: {compact: false}
       },
       {
         test: /\.css$/,
@@ -46,7 +52,13 @@ module.exports = {
             use: [{
                 loader: 'file-loader'
             }]
-      }
+      },
+      {
+        test: /\.(mp4)$/,
+        use: [{
+            loader: 'file-loader'
+        }]
+      },
     ]
   },
   plugins: [
@@ -54,6 +66,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
-    })
+    }),
+    new Dotenv()
   ]
 }
