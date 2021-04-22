@@ -25,11 +25,11 @@ class Friends extends React.Component {
 
     toggleProfile = (e) => {
         const { friendStore } = this.props;
-        friendStore.getFriends(e,e+1);
+        friendStore.getOne(e,friendStore.returnFriends);
         this.setState({
             showProfile: !this.state.showProfile,
             fid: e,
-            profileF: friendStore.returnFriends[0]
+            profileF: friendStore.returnFriendInfo
         });
       }
 
@@ -55,7 +55,10 @@ class Friends extends React.Component {
             </Frame>
             
             {this.state.showProfile?(
-                <Profile value={profileF} cancelProfile={this.toggleProfile.bind(this)}/>
+             <div>   {profileF.map((item, index) => (
+                    <Profile key={index} post={item} cancelProfile={this.toggleProfile.bind(this)}/>
+                ))}</div>
+                
             ) : null}
             </Out>
         )
