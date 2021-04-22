@@ -8,13 +8,65 @@ import { AiOutlineGift } from "react-icons/ai";
 import { TiStarOutline } from "react-icons/ti";
 import { BsPerson } from "react-icons/bs";
 import { inject, observer } from "mobx-react";
+import Contents from "../Chats/Contents";
 
-@inject("friendStore")
+@inject("friendStore", "chatStore")
 @observer
 class Profile extends React.Component {
+    state={
+        showChat: false,
+        friends: [],
+        chats: [],
+        chatsContent: []
+    };    
+
+    componentDidMount() {
+        const { chatStore, friendStore} = this.props;
+        friendStore.getFriends(0,3);
+        chatStore.getChats(0,2);
+        this.setState({
+            friends: friendStore.returnFriends
+        });
+        let Clength = chatStore.length;
+        let Flength = friendStore.length;
+
+       for(let i=0;i<Flength;i++){
+        for(let j=0;j<Clength;j++){
+            if(chatStore.returnChats[j].Friend_ID === friendStore.returnFriends[i].Friend_ID) {
+                friendStore.concatItems(chatStore.returnChats[j], friendStore.returnFriends[i]);   
+            }
+        }    
+       }
+       this.setState({
+            chats: friendStore.combines
+        });
+    }
+
+    toggleChatting = (e) => {
+        const { friendStore } = this.props;
+        friendStore.getOne(e,friendStore.combines);
+        this.setState({
+            showChat: !this.state.showChat,
+            chatsContent: friendStore.returnFriendInfo
+        });
+
+        if(friendStore.returnFriendInfo.length === 0){
+            friendStore.getOne(e,friendStore.returnFriends);
+            this.setState({
+                chatsContent: friendStore.returnFriendInfo
+            });
+        }
+      }
+
+      toggleP = () => {
+        this.props.cancelProfile();
+      }
+
     render(){
-        const { NAME, PImg, PMusic, PMessage, Like } = this.props.value;
+        const { Friend_ID, NAME, PImg, PMusic, PMessage, Like } = this.props.post;
+        const{chatsContent} = this.state;
         return(
+            <Out>
             <Frame>
                 <Cancel>
                     <CClick onClick={this.props.cancelProfile}><Close/></CClick>
@@ -40,19 +92,27 @@ class Profile extends React.Component {
                     </Area>
                 </ImgF>
                 <Bottom>
-                    <Item>
+                    <Item2 onClick={() => this.toggleChatting(Friend_ID)}>
                         <MsgI/>
                         <Text>1:1 채팅</Text>
-                    </Item>
+                    </Item2>
                     <Item>
                         <PhoneI/>
                         <Text>통화하기</Text>
                     </Item>
                 </Bottom>
             </Frame>
+            {this.state.showChat?(
+                <div>{chatsContent.map((item, index) => (
+                    <Contents key={index} post={item} cancelChat={this.toggleChatting.bind(this)} cancelP={this.toggleP.bind(this)}/>
+                ))}</div>
+             ) : null}
+            </Out>
         )
     }
 }
+
+const Out = styled.div``
 
 const Frame = styled.div`
     min-width: 375px;
@@ -216,6 +276,17 @@ const Item = styled.div`
     align-items: center; 
     justify-content: center; 
     color: white;
+`
+
+const Item2 = styled.button`
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    color: white;
+    border: none;
+    background: transparent;
+    font-size: larger;
 `
 
 const Text = styled.div`
