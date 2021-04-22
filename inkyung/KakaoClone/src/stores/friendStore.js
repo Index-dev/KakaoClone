@@ -2,6 +2,9 @@ import { observable, action, computed } from "mobx";
 
 export default class FriendStore{
     @observable returnFriends = [];
+    @observable returnFriendInfo = [];
+    @observable length = 0;
+    @observable combines = [];
 
     @computed get returnLength() {
         return this.returnFriends.length;
@@ -45,5 +48,29 @@ export default class FriendStore{
     @action
     getFriends = (startIndex, count) => {
         this.returnFriends = this.fItems.slice(startIndex, startIndex + count);
+        this.length = this.fItems.length;
+    };
+
+    @action
+    getOne = (id, returnItems) => {
+        this.returnFriendInfo = returnItems.filter(
+            (item) => item.Friend_ID===id
+        )
+    };
+
+    @action
+    concatReset = () => {
+       this.combines=[];
+    };
+
+    @action
+    concatItems = (cItems, fItems) => {
+        this.combines = this.combines.concat({
+            Friend_ID: fItems.Friend_ID,
+            PImg: fItems.PImg,
+            NAME: fItems.NAME,
+            showMessage: cItems.showMessage,
+            cTime: cItems.cTime
+        })
     };
 }

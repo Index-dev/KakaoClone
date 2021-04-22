@@ -2,6 +2,8 @@ import { observable, action, computed } from "mobx";
 
 export default class ChatStore{
     @observable returnChats = [];
+    @observable returnChatContents = [];
+    @observable length = 0;
 
     @computed get returnLength() {
         return this.returnChats.length;
@@ -23,10 +25,21 @@ export default class ChatStore{
 
     constructor(root) {
         this.root = root;
+        this.returnChats=[];
+        this.returnChatContents=[];
     }
 
     @action
     getChats = (startIndex, count) => {
         this.returnChats = this.cItems.slice(startIndex, startIndex + count);
+        this.length = this.cItems.length;
     };
+
+    @action
+    getOne = (id) => {
+        this.returnChatContents = this.returnChats.filter(
+            (item) => item.Friend_ID===id
+        )
+    };
+
 }
