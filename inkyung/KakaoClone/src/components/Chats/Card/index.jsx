@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = ({ post, value, onToggle }) => {
-    const { Friend_ID, showMessage,cTime } = post;
+const Card = ({ post, onToggle }) => {
+    const { Friend_ID, showMessage,cTime,PImg,NAME} = post;
+
     return(
         <B onClick={() => onToggle(Friend_ID)}>
         <ChatF>
             <Fphoto>
-                <IMG src={value[Friend_ID].PImg}/>
+                <IMG src={PImg}/>
             </Fphoto>
             <CInfo>
-                <Fname>{value[Friend_ID].NAME}</Fname>
+                <Fname>{NAME}</Fname>
                 <Content>{showMessage}</Content>
             </CInfo>
             <Time>
