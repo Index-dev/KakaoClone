@@ -31,7 +31,7 @@ const Container = styled.div`
     padding: 0.5rem 0.2rem;
     cursor: pointer;
 
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 `;
 
 const AvartarContainer = styled.div`

@@ -16,7 +16,12 @@ import unknown from "assets/image/unknown.png";
 function User(props) {
     return (
         <HeaderNavSection>
-            {props.dontShowLoad && <Profile showProfile={props.showProfile} />}
+            {props.dontShowLoad && props.showProfile && (
+                <Profile
+                    showProfile={props.showProfile}
+                    handleCloseProfile={props.handleCloseProfile}
+                />
+            )}
             <Container>
                 <Title>친구</Title>
                 <InfoContainer
