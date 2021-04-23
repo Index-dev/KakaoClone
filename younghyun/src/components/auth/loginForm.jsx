@@ -18,7 +18,7 @@ function LoginTemplate() {
         <ButtonContainer>
           <Button
             onClick={() => {
-              window.location.href = "/user";
+              window.location.href = "/loading";
             }}
           >
             로그인
