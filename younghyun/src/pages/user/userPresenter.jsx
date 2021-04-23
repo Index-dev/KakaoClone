@@ -77,6 +77,9 @@ function User(props) {
         <InfoContainer name="친구" statusText="" image={unknown} themeSong="" />
         <InfoContainer name="친구" statusText="" image={unknown} themeSong="" />
         <InfoContainer name="친구" statusText="" image={unknown} themeSong="" />
+        <InfoContainer name="친구" statusText="" image={unknown} themeSong="" />
+        <InfoContainer name="친구" statusText="" image={unknown} themeSong="" />
+        <InfoContainer name="친구" statusText="" image={unknown} themeSong="" />
       </Container>
     </HeaderNavSection>
   );

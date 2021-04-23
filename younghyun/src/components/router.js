@@ -39,7 +39,8 @@ function RouterContainer() {
 function checkURL() {
   return (
     window.location.pathname.split("/")[1] !== "" &&
-    window.location.pathname !== "/loading"
+    window.location.pathname !== "/loading" &&
+    window.location.pathname !== "/chat/detail"
   );
 }
 

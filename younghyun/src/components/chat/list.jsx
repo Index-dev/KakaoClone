@@ -24,10 +24,12 @@ const Container = styled.div`
 
   color: white;
 
-  padding: 0.5rem 0.2rem;
+  padding: 1.3rem 0.2rem;
   cursor: pointer;
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 `;
 
 const AvartarContainer = styled.div`

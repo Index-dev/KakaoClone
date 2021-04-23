@@ -105,6 +105,7 @@ const Functions = styled.div`
 `;
 
 const EachFunction = styled.div`
-  dispay: flex;
+  display: flex;
   justify-content: center;
+  cursor: pointer;
 `;
