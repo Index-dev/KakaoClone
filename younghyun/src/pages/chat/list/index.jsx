@@ -1,14 +1,54 @@
 import styled from "styled-components";
+import HeaderNavSection from "components/layout/paddingSection";
+import List from "components/chat/list";
+import Profile from "pages/profile/animation";
 
-function ChatList() {
-    return <Container>chatList</Container>;
+import jayz from "assets/image/jayZLogo.png";
+import ryan from "assets/image/ryan.jpg";
+import apeach from "assets/image/apeach.jpg";
+
+function User(props) {
+  return (
+    <HeaderNavSection>
+      {props.dontShowLoad && props.showProfile && (
+        <Profile
+          showProfile={props.showProfile}
+          handleCloseProfile={props.handleCloseProfile}
+        />
+      )}
+      <Container>
+        <Title>채팅</Title>
+        <List
+          name="재수없는 라이언"
+          statusText="이젠 내 세상이야"
+          image={ryan}
+          onClick={() => {
+            window.location.href = "chat/detail";
+          }}
+        />
+        <List
+          name="나와의 채팅"
+          statusText="두부 1모, 불닭볶음면"
+          image={jayz}
+        />
+        <List name="피치" statusText="잘자☆" image={apeach} />
+      </Container>
+    </HeaderNavSection>
+  );
 }
-
-export default ChatList;
+export default User;
 
 const Container = styled.div`
-    width: 100%;
-    height: ${window.innerHeight - 20}px;
-    max-height: 900px;
-    border: 1px solid black;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.7em;
+  color: "#f7cb00";
+`;
+
+const Title = styled.div`
+  width: 80%;
+  padding: 0.8rem 0.5rem;
 `;

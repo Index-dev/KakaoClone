@@ -1,13 +1,13 @@
 import styled from "styled-components";
-function Profile(props) {
+function Preview(props) {
   return (
     <Container statusMargin={props.statusText}>
       <Name>{props.name}</Name>
-      {props.statusText && <StatusText>{props.statusText}</StatusText>}
+      <StatusText>{props.statusText}</StatusText>
     </Container>
   );
 }
-export default Profile;
+export default Preview;
 
 const Container = styled.div`
   width: auto;
