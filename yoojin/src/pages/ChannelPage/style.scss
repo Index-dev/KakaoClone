@@ -1,0 +1,31 @@
+.channel__top {
+    display: grid;
+    grid-template-columns: 85% 15%;
+    height: 10%;
+    align-content: center;
+
+    & .channel__menu {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+
+        &>div {
+            flex: 0 0 auto;
+            margin: 0px 5px 0px 5px;
+            height: 100%;
+        }
+
+        &::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #2f3542;
+            border-radius: 50px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: rgb(223, 223, 223);
+        }
+    }
+}

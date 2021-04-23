@@ -1,0 +1,53 @@
+.menu__frame {
+    display: grid;
+    grid-auto-flow: column;
+    font-size: 80%;
+    white-space: nowrap;
+    justify-content: center;
+
+    >.menu__item {
+        flex: 0 0 auto;
+        margin: 0px 5px 0px 5px;
+        padding: 10px;
+    }
+}
+
+img {
+    width: 20px;
+    height: 20px;
+}
+
+.content__menu {
+    height: 25%;
+    background-color: #ffffff;
+    margin: 5px 0px;
+
+    &>.content__menu_search {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 10% 90%;
+        align-items: center;
+        place-items: center;
+        background-color: rgb(212, 212, 212);
+        padding: 3px;
+        margin: 0px 7px;
+        border-radius: 10px;
+
+        &>input {
+            border: none;
+            margin: 5px;
+            width: 90%;
+            background-color: rgb(212, 212, 212);
+        }
+
+        &>div {
+            border-radius: 3px;
+            width: fit-content;
+
+            &>img {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}

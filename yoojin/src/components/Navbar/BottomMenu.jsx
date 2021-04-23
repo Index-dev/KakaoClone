@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./BottomMenu.css";
-import users from "../../img/user.png";
-import chat from "../../img/messenger.png";
-import channel from "../../img/global-network.png";
-import shopping from "../../img/shopping-bag.png";
-import etc from "../../img/menu.png";
+import users from "../../asset/img/user.png";
+import chat from "../../asset/img/messenger.png";
+import channel from "../../asset/img/global-network.png";
+import shopping from "../../asset/img/shopping-bag.png";
+import etc from "../../asset/img/menu.png";
 
 const BottomMenu = () => {
   return (
@@ -16,10 +16,10 @@ const BottomMenu = () => {
       <Link to="/chattings">
         <img className="bottom__item" src={chat} alt="" />
       </Link>
-      <Link to="/chattings">
+      <Link to="/channel">
         <img className="bottom__item" src={channel} alt="" />
       </Link>
-      <Link to="/chattings">
+      <Link to="/shopping">
         <img className="bottom__item" src={shopping} alt="" />
       </Link>
       <Link to="/chattings">
