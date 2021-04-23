@@ -19,7 +19,7 @@ const BottomMenu = () => {
       <Link to="/channel">
         <img className="bottom__item" src={channel} alt="" />
       </Link>
-      <Link to="/chattings">
+      <Link to="/shopping">
         <img className="bottom__item" src={shopping} alt="" />
       </Link>
       <Link to="/chattings">
