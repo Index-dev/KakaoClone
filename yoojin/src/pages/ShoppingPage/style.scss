@@ -14,17 +14,7 @@
         overflow-y: auto;
 
         &::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: rgb(247, 168, 66);
-            border-radius: 10px;
-        }
-
-        &::-webkit-scrollbar-track {
-            background-color: rgb(248, 207, 152);
-            box-shadow: inset 0px 0px 5px white;
+            display: none;
         }
 
         &>.content__ad {
@@ -34,47 +24,6 @@
 
         &>.content__menu {
             height: 25%;
-            background-color: #ffffff;
-
-            &>.content__menu_search {
-                display: grid;
-                grid-auto-flow: column;
-                grid-template-columns: 15% 85%;
-                align-items: center;
-                place-items: center;
-
-                &>input {
-                    border: none;
-                    border-bottom: 1px solid;
-                    margin: 5px;
-                    width: 100%;
-                }
-
-                &>button {
-                    background-color: #ffffff;
-                    border: 1px solid;
-                    border-radius: 3px;
-
-                    &>img {
-                        width: 15px;
-                        height: 15px;
-                    }
-                }
-            }
-        }
-
-        &>.content__book {
-            height: 40%;
-            background-color: #ffffff;
-        }
-
-        &>.content__bag {
-            height: 60%;
-            background-color: #ffffff;
-        }
-
-        &>.content__tech {
-            height: 40%;
             background-color: #ffffff;
         }
     }

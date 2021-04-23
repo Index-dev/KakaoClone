@@ -29,6 +29,9 @@ img {
         align-items: center;
         place-items: center;
         background-color: rgb(212, 212, 212);
+        padding: 3px;
+        margin: 0px 7px;
+        border-radius: 10px;
 
         &>input {
             border: none;
