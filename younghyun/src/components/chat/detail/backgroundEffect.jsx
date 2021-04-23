@@ -16,9 +16,9 @@ function SelectedEffect() {
     let sun = new Sun();
 
     let hills = [
-      new Hill("#2A120A", 0.3, 5),
-      new Hill("#191007", 0.7, 4),
-      new Hill("#181907", 2, 3),
+      new Hill("#663300", 0.3, 5),
+      new Hill("#ff8000", 0.7, 4),
+      new Hill("#004d00", 2, 3),
     ];
 
     function resize() {
@@ -42,9 +42,8 @@ function SelectedEffect() {
       sun.draw(ctx, t);
       sun.drawFace(ctx);
 
-      let dots;
       for (let i = 0; i < hills.length; i++) {
-        dots = hills[i].draw(ctx);
+        hills[i].draw(ctx);
       }
     }
 

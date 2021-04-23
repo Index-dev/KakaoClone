@@ -19,17 +19,17 @@ function User(props) {
       <Container>
         <Title>채팅</Title>
         <List
-          name="재수없는 라이언"
-          statusText="이젠 내 세상이야"
-          image={ryan}
+          name="나와의 채팅"
+          statusText="두부 1모, 불닭볶음면"
+          image={jayz}
           onClick={() => {
             window.location.href = "chat/detail";
           }}
         />
         <List
-          name="나와의 채팅"
-          statusText="두부 1모, 불닭볶음면"
-          image={jayz}
+          name="재수없는 라이언"
+          statusText="이젠 내 세상이야"
+          image={ryan}
         />
         <List name="피치" statusText="잘자☆" image={apeach} />
       </Container>
