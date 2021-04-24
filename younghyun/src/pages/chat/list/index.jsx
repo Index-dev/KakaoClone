@@ -1,21 +1,14 @@
 import styled from "styled-components";
 import HeaderNavSection from "components/layout/paddingSection";
 import List from "components/chat/list";
-import Profile from "pages/profile/animation";
 
 import jayz from "assets/image/jayZLogo.png";
 import ryan from "assets/image/ryan.jpg";
 import apeach from "assets/image/apeach.jpg";
 
-function User(props) {
+function User() {
   return (
     <HeaderNavSection>
-      {props.dontShowLoad && props.showProfile && (
-        <Profile
-          showProfile={props.showProfile}
-          handleCloseProfile={props.handleCloseProfile}
-        />
-      )}
       <Container>
         <Title>채팅</Title>
         <List

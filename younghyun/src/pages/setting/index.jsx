@@ -1,14 +1,28 @@
 import styled from "styled-components";
+import HeaderNavSection from "components/layout/paddingSection";
 
 function Setting() {
-    return <Container>Setting</Container>;
+  return (
+    <HeaderNavSection>
+      <Container>
+        <Title>Setting</Title>
+      </Container>
+    </HeaderNavSection>
+  );
 }
-
 export default Setting;
 
 const Container = styled.div`
-    width: 100%;
-    height: ${window.innerHeight - 20}px;
-    max-height: 900px;
-    border: 1px solid black;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.7em;
+  color: "#f7cb00";
+`;
+
+const Title = styled.div`
+  width: 80%;
+  padding: 0.8rem 0.5rem;
 `;
