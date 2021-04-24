@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import mic from "assets/image/mic.png";
 import speaker from "assets/image/speaker.png";
-import jayGLogo from "assets/image/jayGLogo.png";
+import jayGLogo from "assets/image/jayZLogo.png";
 
 function Status() {
   return (
@@ -27,7 +27,7 @@ const Container = styled.div`
 
   background-color: rgba(254, 208, 0, 1);
 
-  z-index: 99;
+  z-index: 9999;
 `;
 
 const Image = styled.div`
