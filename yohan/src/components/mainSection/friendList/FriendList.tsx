@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import usersData from '../../../data/users';
+import useStores from '../../../hooks/useStores';
 
 import Friend from './friend/Friend';
 
 import SearchIcon from '@material-ui/icons/Search';
 
 const FriendList = () => {
-  const [users, setUsers] = useState(usersData);
+  const { friendStore } = useStores();
+  const friendList = friendStore.friendList;
+  const [users, setUsers] = useState(friendList);
 
   const handleQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
-    setUsers(usersData.filter(user => user.name.includes(query)));
+    setUsers(friendList.filter(user => user.name.includes(query)));
 
     if (e.target.value.length === 0) {
-      setUsers(usersData);
+      setUsers(friendList);
     }
   };
 
