@@ -34,7 +34,15 @@ const FriendList = () => {
       <FriendListBody>
         <MyProfile>
           <TitleText>내 기본프로필</TitleText>
-          <Friend name="요한" />
+          <Friend
+            name="요한"
+            avatarSettings={{
+              avatarWidth: 50,
+              avatarHeight: 50,
+              borderRadius: 21,
+              iconSize: 2.3,
+            }}
+          />
         </MyProfile>
 
         <Friends>
@@ -102,7 +110,7 @@ const FriendListBody = styled.section`
   height: 100%;
   overflow: auto;
 
-  width: 95%;
+  width: 100%;
 `;
 
 const MyProfile = styled.article`
@@ -115,6 +123,7 @@ const MyProfile = styled.article`
 const TitleText = styled.div`
   color: #888;
   font-size: 0.8rem;
+  margin-left: 12px;
 `;
 
 const Friends = styled.article``;

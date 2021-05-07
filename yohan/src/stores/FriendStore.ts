@@ -53,7 +53,7 @@ class FriendStore {
     },
     {
       uid: 10,
-      name: '요한',
+      name: '헬로미',
       intro: '프론트엔드 고수 까지',
     },
     {

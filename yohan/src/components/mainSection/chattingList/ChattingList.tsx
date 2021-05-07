@@ -2,49 +2,36 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import useStores from '../../../hooks/useStores';
 
+import Chatting from './chatting/Chatting';
 import SearchIcon from '@material-ui/icons/Search';
 
 const ChattingList = () => {
-  const { friendStore } = useStores();
-  const friendList = friendStore.friendList;
-  const [users, setUsers] = useState(friendList);
+  const { chattingStore } = useStores();
+  const chattingList = chattingStore.chattingList;
 
-  const handleQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const query = e.target.value;
-    setUsers(friendList.filter(user => user.name.includes(query)));
-
-    if (e.target.value.length === 0) {
-      setUsers(friendList);
-    }
-  };
+  const handleQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {};
 
   return (
-    <FriendListSection>
-      <FriendListTitle>채팅</FriendListTitle>
-      <FriendListSearchBar>
+    <ChattingListSection>
+      <ChattingListTitle>채팅</ChattingListTitle>
+      <ChattingListSearchBar>
         <SearchIcon />
         <input
           type="text"
-          placeholder="이름으로 검색"
+          placeholder="채팅방 이름, 참여자 검색"
           onChange={handleQueryChange}
         ></input>
-      </FriendListSearchBar>
-      <FriendListBody>
-        <MyProfile>
-          <TitleText>내 기본프로필</TitleText>
-        </MyProfile>
-
-        <Friends>
-          <TitleText style={{ marginTop: '10px' }}>
-            친구 {users.length}
-          </TitleText>
-        </Friends>
-      </FriendListBody>
-    </FriendListSection>
+      </ChattingListSearchBar>
+      <ChattingListBody>
+        {chattingList.map(chatting => (
+          <Chatting key={chatting.chatId} chatting={chatting} />
+        ))}
+      </ChattingListBody>
+    </ChattingListSection>
   );
 };
 
-const FriendListSection = styled.section`
+const ChattingListSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,14 +41,14 @@ const FriendListSection = styled.section`
   border-radius: 0 12px 12px 0;
 `;
 
-const FriendListTitle = styled.article`
+const ChattingListTitle = styled.article`
   align-self: flex-start;
   font-weight: bold;
   font-size: 1rem;
   padding: 14px;
 `;
 
-const FriendListSearchBar = styled.div`
+const ChattingListSearchBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -86,9 +73,7 @@ const FriendListSearchBar = styled.div`
   }
 `;
 
-const FriendListBody = styled.section`
-  margin-top: 10px;
-  padding-top: 15px;
+const ChattingListBody = styled.section`
   padding-bottom: 15px;
 
   display: flex;
@@ -96,23 +81,7 @@ const FriendListBody = styled.section`
   height: 100%;
   overflow: auto;
 
-  width: 95%;
+  width: 100%;
 `;
-
-const MyProfile = styled.article`
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
-`;
-
-const TitleText = styled.div`
-  color: #888;
-  font-size: 0.8rem;
-`;
-
-const Friends = styled.article``;
-
-const FriendsList = styled.div``;
 
 export default ChattingList;
